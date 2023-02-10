@@ -5,16 +5,20 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'standard-with-typescript'
+    'standard-with-typescript',
+    'plugin:i18next/recommended'
   ],
   overrides: [],
   parserOptions: {
+    parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['tsconfig.json']
+    project: './tsconfig.json'
   },
   plugins: [
-    'react'
+    'react',
+    '@typescript-eslint',
+    'i18next'
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -27,6 +31,9 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'off',
     'no-underscore-dangle': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
-    '@typescript-eslint/naming-convention': 'warn'
+    '@typescript-eslint/naming-convention': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
+    'i18next/no-literal-string': ['error', { markupOnly: true }]
+
   }
 }
