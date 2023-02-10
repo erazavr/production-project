@@ -26,14 +26,18 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
-    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    'react/jsx-filename-extension': [
+      2,
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] }
+    ],
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
     'no-underscore-dangle': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true }]
+    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'max-len': ['error', { ignoreComments: true }]
 
   }
 }
