@@ -37,7 +37,7 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true }],
-    'max-len': ['error', { ignoreComments: true }]
+    'max-len': ['error', { ignoreComments: true, code: 100 }]
 
   }
 }
