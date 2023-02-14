@@ -8,7 +8,6 @@ module.exports = {
     'standard-with-typescript',
     'plugin:i18next/recommended'
   ],
-  overrides: [],
   parserOptions: {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
@@ -38,6 +37,13 @@ module.exports = {
     '@typescript-eslint/no-misused-promises': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true }],
     'max-len': ['error', { ignoreComments: true, code: 100 }]
-
-  }
+  },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off'
+      }
+    }
+  ]
 }
