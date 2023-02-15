@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react'
 import {
   renderWithTranslation
-} from '../../../../../shared/lib/tests/renderWithTranslation/renderWithTranslation'
+} from '@/shared/lib/tests/renderWithTranslation/renderWithTranslation'
 import { SideBar } from './SideBar'
 
 describe('SideBar test', () => {

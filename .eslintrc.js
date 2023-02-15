@@ -35,7 +35,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to'] }],
     'max-len': ['error', { ignoreComments: true, code: 100 }]
   },
   overrides: [
