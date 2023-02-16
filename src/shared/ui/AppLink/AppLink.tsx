@@ -1,4 +1,4 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
+import { classNames } from 'shared/lib/classNames/classNames'
 import { type FC } from 'react'
 import { Link, type LinkProps } from 'react-router-dom'
 

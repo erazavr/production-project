@@ -10,8 +10,7 @@ export default {
   ],
   moduleNameMapper: {
     '\\.(s?css)$': 'identity-obj-proxy',
-    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-    '@/(.*)': '<rootDir>/src/$1'
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
   },
   moduleFileExtensions: [
     'js',
@@ -26,5 +25,8 @@ export default {
   rootDir: '../../',
   setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   testEnvironment: 'jsdom',
-  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)']
+  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
+  modulePaths: [
+    '<rootDir>src'
+  ]
 }

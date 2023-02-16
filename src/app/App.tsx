@@ -1,8 +1,8 @@
-import { AppRouter } from '@/app/providers/router'
-import { useTheme } from '@/app/providers/ThemeProvider'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { Header } from '@/widgets/Navbar'
-import { SideBar } from '@/widgets/SideBar/ui/SideBar'
+import { AppRouter } from 'app/providers/router'
+import { useTheme } from 'app/providers/ThemeProvider'
+import { classNames } from 'shared/lib/classNames/classNames'
+import { Header } from 'widgets/Header'
+import { SideBar } from 'widgets/SideBar/ui/SideBar'
 import React, { Suspense } from 'react'
 import './styles/index.scss'
 

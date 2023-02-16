@@ -1,4 +1,4 @@
-import { Button, VariantButton } from '@/shared/ui/Button/Button'
+import { Button, VariantButton } from 'shared/ui/Button/Button'
 import { render, screen } from '@testing-library/react'
 
 describe('Test Button', () => {
