@@ -21,7 +21,7 @@ export const SideBar = ({ className }: SideBarProps) => {
   }
 
   return (
-    <aside
+    <asid
       data-testid="sidebar"
       className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}
     >
@@ -36,6 +36,6 @@ export const SideBar = ({ className }: SideBarProps) => {
         <ThemeSwitcher/>
         <LangSwitcher className={cls.lng}/>
       </div>
-    </aside>
+    </asid>
   )
 }
