@@ -1,4 +1,4 @@
-import { Button, VariantButton } from 'shared/ui/Button/Button'
+import { Button, ButtonVariant } from 'shared/ui/Button/Button'
 import { render, screen } from '@testing-library/react'
 
 describe('Test Button', () => {
@@ -7,7 +7,7 @@ describe('Test Button', () => {
     expect(screen.getByText('TEST')).toBeInTheDocument()
   })
   test('with class - clear', () => {
-    render(<Button variant={VariantButton.CLEAR}>TEST</Button>)
+    render(<Button variant={ButtonVariant.CLEAR}>TEST</Button>)
     expect(screen.getByText('TEST')).toHaveClass('clear')
   })
 })
