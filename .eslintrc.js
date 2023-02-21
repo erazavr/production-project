@@ -45,7 +45,8 @@ module.exports = {
     'react/display-name': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'error'
+    'react-hooks/exhaustive-deps': 'error',
+    '@typescript-eslint/prefer-includes': 'warn'
   },
   overrides: [
     {
