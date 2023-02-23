@@ -3,32 +3,12 @@
     {
       "id": 1,
       "title": "json-server",
-      "author": "typicode"
+      "userId": 1
     },
     {
       "id": 2,
       "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "id": 3,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "id": 4,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "id": 5,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "username": "ad12min",
-      "password": "123",
-      "id": 6
+      "userId": 2
     }
   ],
   "comments": [
@@ -38,7 +18,12 @@
       "postId": 1
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": { "name": "typicode" }
 }

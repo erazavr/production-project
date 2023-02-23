@@ -9,13 +9,14 @@
   --font-size-xl: 32px;
   --font-line-xl: 40px;
   --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+  --border-radius: 5px;
 
   // Размеры
 
   --navbar-height: 50px;
   --sidebar-width: 300px;
   --sidebar-width-collapsed: 80px;
-  --btn-border-radius: 5px;
+  --btn-border-radius: var(--border-radius);
   --modal-border-radius: 12px;
 
   // z Индексы
