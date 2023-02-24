@@ -4,7 +4,7 @@ import { type UserSchema } from 'entities/User/model/types/user'
 const initialState: UserSchema = {}
 
 export const userSlice = createSlice({
-  name: 'counter',
+  name: 'user',
   initialState,
   reducers: {}
 })
