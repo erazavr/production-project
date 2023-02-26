@@ -30,16 +30,19 @@ export const Button: FC<ButtonProps> = (props) => {
     variant,
     square,
     size = ButtonSize.M,
+    disabled,
     ...rest
   } = props
 
   const mods: Record<string, boolean> = {
-    [cls.square]: square
+    [cls.square]: square,
+    [cls.disabled]: disabled
   }
 
   return (
     <button
       {...rest}
+      disabled={disabled}
       className={classNames(cls.Button, mods, [
         className,
         cls[variant],

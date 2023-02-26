@@ -87,6 +87,7 @@
     "husky": "^8.0.0"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "@reduxjs/toolkit": "^1.8.0",
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",

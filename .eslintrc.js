@@ -40,13 +40,13 @@ module.exports = {
       'error',
       { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'variant'] }
     ],
-    'max-len': ['error', { ignoreComments: true, code: 100 }],
+    'max-len': ['error', { ignoreComments: true, code: 120 }],
     '@typescript-eslint/consistent-type-assertions': 'off',
     'react/display-name': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
-    '@typescript-eslint/prefer-includes': 'warn'
+    '@typescript-eslint/prefer-includes': 'off'
   },
   overrides: [
     {

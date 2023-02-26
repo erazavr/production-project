@@ -21,7 +21,7 @@ export const LoginModal = (props: LoginModalProps) => {
       onClose={onClose}
       className={classNames('', {}, [className])}
     >
-      <LoginForm/>
+      <LoginForm />
     </Modal>
   )
 }
