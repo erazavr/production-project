@@ -1,6 +1,8 @@
+import { LoginFormAsync } from '../LoginForm/LoginForm.async'
+import { Suspense } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
+import { Loader } from 'shared/ui/Loader/Loader'
 import { Modal } from 'shared/ui/Modal/Modal'
-import { LoginForm } from '../LoginForm/LoginForm'
 
 interface LoginModalProps {
   className?: string
@@ -21,7 +23,10 @@ export const LoginModal = (props: LoginModalProps) => {
       onClose={onClose}
       className={classNames('', {}, [className])}
     >
-      <LoginForm />
+      {/* Main Chunk наоброт увеличился, потом надо посмотреть и решить проблему */}
+      <Suspense fallback={<Loader/>}>
+        <LoginFormAsync/>
+      </Suspense>
     </Modal>
   )
 }

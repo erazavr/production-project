@@ -38,7 +38,7 @@ module.exports = {
     '@typescript-eslint/no-misused-promises': 'off',
     'i18next/no-literal-string': [
       'error',
-      { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'variant'] }
+      { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'variant', 'name'] }
     ],
     'max-len': ['error', { ignoreComments: true, code: 120 }],
     '@typescript-eslint/consistent-type-assertions': 'off',
@@ -46,7 +46,8 @@ module.exports = {
     '@typescript-eslint/no-confusing-void-expression': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
-    '@typescript-eslint/prefer-includes': 'off'
+    '@typescript-eslint/prefer-includes': 'off',
+    '@typescript-eslint/no-dynamic-delete': 'warn'
   },
   overrides: [
     {
