@@ -50,7 +50,8 @@ module.exports = {
     '@typescript-eslint/no-dynamic-delete': 'warn',
     '@typescript-eslint/await-thenable': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
-    '@typescript-eslint/no-invalid-void-type': 'off'
+    '@typescript-eslint/no-invalid-void-type': 'off',
+    '@typescript-eslint/indent': 'off'
   },
   overrides: [
     {

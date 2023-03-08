@@ -59,7 +59,7 @@ const LoginForm = memo(function LoginForm (props: LoginFormProps) {
       <form onSubmit={onLoginClick} className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('Форма авторизации')}/>
         {error && (
-          <Text variant={TextVariant.ERROR} text={t(error)}/>
+          <Text variant={TextVariant.ERROR} text={t('Вы ввели неверный логин или пароль')}/>
         )}
         <Input
           autoFocus

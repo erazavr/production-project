@@ -4,18 +4,31 @@
   border-radius: var(--border-radius);
 }
 
-.header {
-  display: flex;
-}
-
-.editBtn {
-  margin-left: auto;
-}
-
-.data {
-  margin-top: 30px;
-}
-
 .input {
   margin-top: 10px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.error {
+  border: 2px solid var(--red-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.avatarWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.editing {
+  border: 2px solid var(--inverted-primary-color);
 }

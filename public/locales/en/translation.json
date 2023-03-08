@@ -14,5 +14,11 @@
   "Форма авторизации": "Auth form",
   "Вы ввели неверный логин или пароль": "Incorrect login or password",
   "Профиль": "Profile",
-  "Редактировать": "Edit"
+  "Редактировать": "Edit",
+  "Отменить": "Cancel",
+  "Произошла ошибка при загрузке профиля": "An error occurred while loading the profile",
+  "Попробуйте обновить страницу": "Try refreshing the page",
+  "Сохранить": "Save",
+  "Укажите валюту": "Select currency",
+  "Укажите страну": "Select country"
 }

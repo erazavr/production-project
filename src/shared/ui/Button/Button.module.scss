@@ -31,6 +31,13 @@
   border: none;
 }
 
+.outlineRed {
+  border: 1px solid var(--red-light);
+  color: var(--red-light);
+  background: none;
+  border-radius: var(--btn-border-radius);
+}
+
 .square {
   padding: 0;
 }
