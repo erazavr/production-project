@@ -1,3 +1,7 @@
+export {
+  getProfileValidateErrors
+} from './model/selectors/getProfileValidateErrors/getProfileValidateErrors'
+
 export { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm/getProfileForm'
 
 export {
