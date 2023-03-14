@@ -1,13 +1,14 @@
 import { AppRouter } from 'app/providers/router'
-import { userActions } from 'entities/User'
+import { getUserInited, userActions } from 'entities/User'
 import React, { Suspense, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Header } from 'widgets/Header'
 import { SideBar } from 'widgets/SideBar/ui/SideBar'
 
 export default function App () {
   const dispatch = useDispatch()
+  const inited = useSelector(getUserInited)
 
   useEffect(() => {
     dispatch(userActions.initAuthData())
@@ -19,7 +20,7 @@ export default function App () {
         <Header/>
         <div className="content-page">
           <SideBar/>
-          <AppRouter/>
+          {inited && <AppRouter/>}
         </div>
       </Suspense>
     </div>
