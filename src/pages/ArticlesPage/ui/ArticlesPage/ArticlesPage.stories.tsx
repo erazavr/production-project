@@ -4,7 +4,7 @@ import React from 'react'
 import ArticlesPage from './ArticlesPage'
 
 export default {
-  title: 'features/ArticlesPage',
+  title: 'pages/ArticlesPage',
   component: ArticlesPage,
   argTypes: {
     backgroundColor: { control: 'color' }

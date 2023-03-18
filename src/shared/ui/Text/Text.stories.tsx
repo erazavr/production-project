@@ -2,7 +2,7 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
 import React from 'react'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Text, TextVariant } from './Text'
+import { Text, TextSize, TextVariant } from './Text'
 
 export default {
   title: 'shared/Text',
@@ -54,4 +54,11 @@ Error.args = {
   text: 'Text',
   title: 'TItle',
   variant: TextVariant.ERROR
+}
+
+export const SizeL = Template.bind({})
+SizeL.args = {
+  text: 'Text text text',
+  title: 'Title title title',
+  size: TextSize.L
 }
