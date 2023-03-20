@@ -10,6 +10,8 @@ interface AvatarProps {
   alt?: string
 }
 
+const NO_IMAGE_URL = 'https://upload.wikimedia.org/wikipedia/commons/2/2f/No-photo-m.png'
+
 export const Avatar = (props: AvatarProps) => {
   const { className, src, size, alt } = props
 
@@ -19,6 +21,6 @@ export const Avatar = (props: AvatarProps) => {
   }), [size])
 
   return (
-    <img src={src} style={styles} className={classNames(cls.Avatar, {}, [className])} alt={alt} />
+    <img src={src || NO_IMAGE_URL} style={styles} className={classNames(cls.Avatar, {}, [className])} alt={alt} />
   )
 }

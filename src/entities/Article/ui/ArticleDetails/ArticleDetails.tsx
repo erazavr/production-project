@@ -7,8 +7,7 @@ import {
 import {
   ArticleTextBlockComponent
 } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent'
-import { type ArticleBlock, ArticleBlockType } from '../../model/types/article'
-import { memo, useCallback, useEffect } from 'react'
+import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import CalendarIcon from 'shared/assets/icons/calendar-icon.svg'
@@ -20,6 +19,7 @@ import {
   type ReducersList
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Icon } from 'shared/ui/Icon/Icon'
 import { Sceleton } from 'shared/ui/Sceleton/Sceleton'
@@ -31,6 +31,7 @@ import {
 } from '../../model/selectors/articleDetails'
 import { fetchArticleById } from '../../model/services/fetchArticleById'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
+import { type ArticleBlock, ArticleBlockType } from '../../model/types/article'
 
 import cls from './ArticleDetails.module.scss'
 
@@ -56,11 +57,9 @@ export const ArticleDetails = memo(function ArticleDetails (props: ArticleDetail
 
   const dispatch = useAppDispatch()
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticleById(id))
-    }
-  }, [dispatch, id])
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(id))
+  })
 
   let content
 
@@ -81,8 +80,8 @@ export const ArticleDetails = memo(function ArticleDetails (props: ArticleDetail
     content = (
       <>
         <Sceleton className={cls.avatar} height={200} width={200} borderRadius="50%"/>
-        <Sceleton className={cls.sceleton} height={30} width={700}/>
-        <Sceleton className={cls.sceleton} height={30} width={400}/>
+        <Sceleton className={cls.sceleton} height={30} width={'100%'}/>
+        <Sceleton className={cls.sceleton} height={30} width={'100%'}/>
         <Sceleton className={cls.sceleton} height={230} width="100%"/>
         <Sceleton className={cls.sceleton} height={230} width="100%"/>
       </>
