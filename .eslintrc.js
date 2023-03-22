@@ -51,7 +51,8 @@ module.exports = {
     '@typescript-eslint/await-thenable': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-invalid-void-type': 'off',
-    '@typescript-eslint/indent': 'off'
+    '@typescript-eslint/indent': 'off',
+    '@typescript-eslint/restrict-template-expressions': 'off'
   },
   overrides: [
     {

@@ -1,4 +1,10 @@
-import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile'
+import {
+  getProfileData,
+  getProfileReadonly,
+  profileActions,
+  updateProfileData
+} from 'entities/Profile'
+import { getUserAuthData } from 'entities/User'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -19,6 +25,11 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   const readonly = useSelector(getProfileReadonly)
   const dispatch = useAppDispatch()
 
+  const authData = useSelector(getUserAuthData)
+  const profileData = useSelector(getProfileData)
+
+  const canEdit = authData?.id === profileData?.id
+
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadonly(false))
   }, [dispatch])
@@ -34,23 +45,26 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   return (
     <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
       <Text title={t('Профиль')}/>
-      {readonly
-        ? (
-          <Button onClick={onEdit} variant={ButtonVariant.OUTLINE} className={cls.editBtn}>
-            {t('Редактировать')}
-          </Button>
-        )
-        : (
-          <>
-            <Button onClick={onCancelEdit} variant={ButtonVariant.OUTLINE_RED} className={cls.editBtn}>
-              {t('Отменить')}
+      {canEdit && <div className={cls.buttonsWrapper}>
+        {readonly
+          ? (
+            <Button onClick={onEdit} variant={ButtonVariant.OUTLINE} className={cls.editBtn}>
+              {t('Редактировать')}
             </Button>
-            <Button onClick={onSave} variant={ButtonVariant.OUTLINE} className={cls.saveBtn}>
-              {t('Сохранить')}
-            </Button>
-          </>
-        )
-      }
+          )
+          : (
+            <>
+              <Button onClick={onCancelEdit} variant={ButtonVariant.OUTLINE_RED} className={cls.editBtn}>
+                {t('Отменить')}
+              </Button>
+              <Button onClick={onSave} variant={ButtonVariant.OUTLINE} className={cls.saveBtn}>
+                {t('Сохранить')}
+              </Button>
+            </>
+          )
+        }
+      </div>}
+
     </div>
   )
 }
