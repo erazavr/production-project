@@ -1,10 +1,5 @@
-import {
-  getProfileData,
-  getProfileReadonly,
-  profileActions,
-  updateProfileData
-} from 'entities/Profile'
-import { getUserAuthData } from 'entities/User'
+import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile'
+import { getCanEditProfile } from 'pages/ProfilePage/model/selectors/getCanEditProfile'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -25,10 +20,7 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   const readonly = useSelector(getProfileReadonly)
   const dispatch = useAppDispatch()
 
-  const authData = useSelector(getUserAuthData)
-  const profileData = useSelector(getProfileData)
-
-  const canEdit = authData?.id === profileData?.id
+  const canEdit = useSelector(getCanEditProfile)
 
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadonly(false))
