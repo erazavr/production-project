@@ -1,6 +1,8 @@
 import { ArticleDetails } from 'entities/Article'
 import { CommentList } from 'entities/Comment'
 import { AddCommentForm } from 'features/addCommentForm'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { Button } from 'shared/ui/Button/Button'
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments'
 import {
   addCommentForArticle
@@ -11,7 +13,7 @@ import {
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { classNames } from 'shared/lib/classNames/classNames'
 import {
   DynamicModuleLoader,
@@ -42,6 +44,11 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading)
 
   const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+
+  const onBackToList = useCallback(() => {
+    navigate(RoutePath.articles)
+  }, [navigate])
 
   const onSendComment = useCallback((text: string) => {
     dispatch(addCommentForArticle(text))
@@ -62,6 +69,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers}>
       <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+        <Button onClick={onBackToList}>{t('Назад к списпку')}</Button>
         <ArticleDetails id={id}/>
         <Text title={t('Коментарии')} className={cls.commentTitle}/>
         <AddCommentForm onSendComment={onSendComment}/>

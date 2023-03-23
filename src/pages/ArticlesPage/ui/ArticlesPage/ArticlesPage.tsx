@@ -1,3 +1,4 @@
+import { ArticleList, ArticleView } from 'entities/Article'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -13,7 +14,9 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 
   return (
     <div className={classNames(cls.ArticlesPage, {}, [className])}>
-      {t('ArticlesPage')}
+      <ArticleList
+        view={ArticleView.LIST}
+        articles={[]}/>
     </div>
   )
 }
