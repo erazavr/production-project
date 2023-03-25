@@ -3,6 +3,7 @@ import { CommentList } from 'entities/Comment'
 import { AddCommentForm } from 'features/addCommentForm'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { Button } from 'shared/ui/Button/Button'
+import { Page } from 'shared/ui/Page/Page'
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments'
 import {
   addCommentForArticle
@@ -68,13 +69,13 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <Button onClick={onBackToList}>{t('Назад к списпку')}</Button>
         <ArticleDetails id={id}/>
         <Text title={t('Коментарии')} className={cls.commentTitle}/>
         <AddCommentForm onSendComment={onSendComment}/>
         <CommentList isLoading={commentsIsLoading} comments={comments}/>
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 }

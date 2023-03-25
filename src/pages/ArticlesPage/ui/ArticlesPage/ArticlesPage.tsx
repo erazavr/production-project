@@ -1,7 +1,11 @@
 import { ArticleList, ArticleViewSelector, type ArticleView } from 'entities/Article'
 import {
-  getArticlesPageError,
-  getArticlesPageIsLoading,
+  fetchNextArticlesPage
+} from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage'
+import { Page } from 'shared/ui/Page/Page'
+import {
+  getArticlesPageError, getArticlesPageHasMore,
+  getArticlesPageIsLoading, getArticlesPageNum,
   getArticlesPageView
 } from '../../model/selectors/articlesPageSelector'
 import {
@@ -43,9 +47,15 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 
   const dispatch = useAppDispatch()
 
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesPage())
+  }, [dispatch])
+
   useInitialEffect(() => {
-    dispatch(fetchArticleList())
     dispatch(articlePageActions.initState())
+    dispatch(fetchArticleList({
+      page: 1
+    }))
   })
 
   const onChangeView = useCallback((view: ArticleView) => {
@@ -54,13 +64,16 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.ArticlesPage, {}, [className])}>
+      <Page
+        onScrollEnd={onLoadNextPart}
+        className={classNames(cls.ArticlesPage, {}, [className])}
+      >
         <ArticleViewSelector onChangeView={onChangeView} view={view}/>
         <ArticleList
           isLoading={isLoading}
           view={view}
           articles={articles}/>
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 }
