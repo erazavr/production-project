@@ -1,16 +1,4 @@
-import { ArticleList, ArticleViewSelector, type ArticleView } from 'entities/Article'
-import {
-  fetchNextArticlesPage
-} from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage'
-import { Page } from 'shared/ui/Page/Page'
-import {
-  getArticlesPageError, getArticlesPageHasMore,
-  getArticlesPageIsLoading, getArticlesPageNum,
-  getArticlesPageView
-} from '../../model/selectors/articlesPageSelector'
-import {
-  fetchArticleList
-} from '../../model/services/fetchArticleList/fetchArticleList'
+import { ArticleList, type ArticleView, ArticleViewSelector } from 'entities/Article'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -21,6 +9,15 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
+import { Page } from 'shared/ui/Page/Page'
+import {
+  getArticlesPageIsLoading,
+  getArticlesPageView
+} from '../../model/selectors/articlesPageSelector'
+import {
+  fetchNextArticlesPage
+} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 import {
   articlePageActions,
   articlePageReducer,
@@ -43,7 +40,6 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   const articles = useSelector(getArticles.selectAll)
   const isLoading = useSelector(getArticlesPageIsLoading)
   const view = useSelector(getArticlesPageView)
-  const error = useSelector(getArticlesPageError)
 
   const dispatch = useAppDispatch()
 
@@ -52,10 +48,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   }, [dispatch])
 
   useInitialEffect(() => {
-    dispatch(articlePageActions.initState())
-    dispatch(fetchArticleList({
-      page: 1
-    }))
+    dispatch(initArticlesPage())
   })
 
   const onChangeView = useCallback((view: ArticleView) => {
@@ -63,7 +56,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   }, [dispatch])
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page
         onScrollEnd={onLoadNextPart}
         className={classNames(cls.ArticlesPage, {}, [className])}
