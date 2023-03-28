@@ -52,7 +52,8 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-invalid-void-type': 'off',
     '@typescript-eslint/indent': 'off',
-    '@typescript-eslint/restrict-template-expressions': 'off'
+    '@typescript-eslint/restrict-template-expressions': 'off',
+    'n/no-callback-literal': 'off'
   },
   overrides: [
     {

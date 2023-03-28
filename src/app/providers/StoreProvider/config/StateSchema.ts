@@ -12,15 +12,14 @@ import { type ProfileSchema } from 'entities/Profile'
 import { type UserSchema } from 'entities/User'
 import { type AddCommentFormSchema } from 'features/addCommentForm'
 import { type LoginSchema } from 'features/AuthByUserName'
+import { type UISchema } from 'features/UI'
 import { type ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage'
 import { type ArticlesPageSchema } from 'pages/ArticlesPage'
-import { type NavigateOptions } from 'react-router'
-import { type To } from 'react-router-dom'
 
 export interface StateSchema {
   counter: CounterSchema
   user: UserSchema
-
+  ui: UISchema
   // Асинхронные редюсеры
   loginForm?: LoginSchema
   profile?: ProfileSchema
