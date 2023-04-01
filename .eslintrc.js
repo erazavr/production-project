@@ -53,7 +53,8 @@ module.exports = {
     '@typescript-eslint/no-invalid-void-type': 'off',
     '@typescript-eslint/indent': 'off',
     '@typescript-eslint/restrict-template-expressions': 'off',
-    'n/no-callback-literal': 'off'
+    'n/no-callback-literal': 'off',
+    '@typescript-eslint/array-type': 'off'
   },
   overrides: [
     {

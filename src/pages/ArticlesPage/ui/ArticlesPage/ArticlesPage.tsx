@@ -1,7 +1,9 @@
-import { ArticleList, type ArticleView, ArticleViewSelector } from 'entities/Article'
+import { ArticleList } from 'entities/Article'
+import { ArticlesPageFilters } from 'pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import { useSearchParams } from 'react-router-dom'
 import { classNames } from 'shared/lib/classNames/classNames'
 import {
   DynamicModuleLoader,
@@ -18,11 +20,7 @@ import {
   fetchNextArticlesPage
 } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
-import {
-  articlePageActions,
-  articlePageReducer,
-  getArticles
-} from '../../model/slices/articlePageSlice'
+import { articlePageReducer, getArticles } from '../../model/slices/articlePageSlice'
 
 import cls from './ArticlesPage.module.scss'
 
@@ -41,6 +39,8 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   const isLoading = useSelector(getArticlesPageIsLoading)
   const view = useSelector(getArticlesPageView)
 
+  const [searchParams] = useSearchParams()
+
   const dispatch = useAppDispatch()
 
   const onLoadNextPart = useCallback(() => {
@@ -48,12 +48,8 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   }, [dispatch])
 
   useInitialEffect(() => {
-    dispatch(initArticlesPage())
+    dispatch(initArticlesPage(searchParams))
   })
-
-  const onChangeView = useCallback((view: ArticleView) => {
-    dispatch(articlePageActions.setView(view))
-  }, [dispatch])
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
@@ -61,9 +57,10 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
         onScrollEnd={onLoadNextPart}
         className={classNames(cls.ArticlesPage, {}, [className])}
       >
-        <ArticleViewSelector onChangeView={onChangeView} view={view}/>
+        <ArticlesPageFilters/>
         <ArticleList
           isLoading={isLoading}
+          className={cls.list}
           view={view}
           articles={articles}/>
       </Page>
