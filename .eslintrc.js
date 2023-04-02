@@ -38,9 +38,9 @@ module.exports = {
     '@typescript-eslint/no-misused-promises': 'off',
     'i18next/no-literal-string': [
       'error',
-      { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'variant'] }
+      { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'variant', 'target'] }
     ],
-    'max-len': ['error', { ignoreComments: true, code: 120 }],
+    'max-len': ['error', { ignoreComments: true, code: 125 }],
     '@typescript-eslint/consistent-type-assertions': 'off',
     'react/display-name': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',

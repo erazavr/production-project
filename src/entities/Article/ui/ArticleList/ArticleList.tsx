@@ -2,7 +2,7 @@ import { ArticleListItem } from 'entities/Article/ui/ArticleListItem/ArticleList
 import {
   ArticleListItemSceleton
 } from 'entities/Article/ui/ArticleListItem/ArticleListItemSceleton'
-import { memo, useCallback } from 'react'
+import { type HTMLAttributeAnchorTarget, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Text, TextSize } from 'shared/ui/Text/Text'
@@ -15,6 +15,7 @@ interface ArticleListProps {
   articles: Article[]
   isLoading?: boolean
   view?: ArticleView
+  target?: HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.GRID ? 9 : 3)
@@ -28,13 +29,14 @@ export const ArticleList = memo(function ArticleList (props: ArticleListProps) {
     className,
     isLoading,
     articles,
-    view = ArticleView.GRID
+    view = ArticleView.GRID,
+    target
   } = props
   const { t } = useTranslation()
 
   const renderArticle = useCallback((article: Article) => (
-    <ArticleListItem article={article} key={article.id} view={view} className={cls.card}/>
-  ), [view])
+    <ArticleListItem article={article} key={article.id} view={view} className={cls.card} target={target}/>
+  ), [target, view])
 
   if (!isLoading && !articles.length) {
     return (
