@@ -8,11 +8,13 @@ import {
   fetchArticleRecommendations
 } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations'
 import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices'
+import {
+  ArticleDetailsPageHeader
+} from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { useNavigate, useParams } from 'react-router-dom'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { useParams } from 'react-router-dom'
 import { classNames } from 'shared/lib/classNames/classNames'
 import {
   DynamicModuleLoader,
@@ -20,7 +22,6 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
-import { Button } from 'shared/ui/Button/Button'
 import { Text, TextSize } from 'shared/ui/Text/Text'
 import { Page } from 'widgets/Page/Page'
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments'
@@ -52,11 +53,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading)
 
   const dispatch = useAppDispatch()
-  const navigate = useNavigate()
-
-  const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles)
-  }, [navigate])
 
   const onSendComment = useCallback((text: string) => {
     dispatch(addCommentForArticle(text))
@@ -78,7 +74,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers}>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <Button onClick={onBackToList}>{t('Назад к списпку')}</Button>
+        <ArticleDetailsPageHeader/>
         <ArticleDetails id={id}/>
         <Text size={TextSize.L} title={t('Рекомендуем')}/>
         <ArticleList
