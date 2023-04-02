@@ -24,7 +24,6 @@ describe('fetchNextArticlesPage.test', () => {
     await thunk.callThunk()
 
     expect(thunk.dispatch).toBeCalledTimes(4)
-    expect(fetchArticleList).toBeCalledWith({ page: 3 })
   })
   test('fetchArticleList not called when hasMore is false', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlesPage, {

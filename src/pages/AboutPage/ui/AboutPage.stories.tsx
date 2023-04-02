@@ -1,5 +1,6 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 import AboutPage from './AboutPage'
 import React from 'react'
 import {
@@ -18,4 +19,5 @@ const Template: ComponentStory<typeof AboutPage> = (args) => <AboutPage />
 
 export const Light = Template.bind({})
 export const Dark = Template.bind({})
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Light.decorators = [StoreDecorator({})]
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]

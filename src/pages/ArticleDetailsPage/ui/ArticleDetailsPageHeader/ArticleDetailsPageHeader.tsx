@@ -36,7 +36,7 @@ export const ArticleDetailsPageHeader = memo(function ArticleDetailsPageHeader (
 
   return (
     <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
-      <Button onClick={onBackToList}>{t('Назад к списпку')}</Button>
+      <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
       {canEdit && <Button onClick={onEditArticle}>{t('Редактировать')}</Button>}
     </div>
   )
