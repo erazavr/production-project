@@ -18,7 +18,8 @@ module.exports = {
     'react',
     '@typescript-eslint',
     'i18next',
-    'react-hooks'
+    'react-hooks',
+    'ernie-plugin'
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -38,9 +39,15 @@ module.exports = {
     '@typescript-eslint/no-misused-promises': 'off',
     'i18next/no-literal-string': [
       'error',
-      { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'variant', 'target'] }
+      {
+        markupOnly: true,
+        ignoreAttribute: ['data-testid', 'to', 'variant', 'target']
+      }
     ],
-    'max-len': ['error', { ignoreComments: true, code: 125 }],
+    'max-len': ['error', {
+      ignoreComments: true,
+      code: 125
+    }],
     '@typescript-eslint/consistent-type-assertions': 'off',
     'react/display-name': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
@@ -54,7 +61,8 @@ module.exports = {
     '@typescript-eslint/indent': 'off',
     '@typescript-eslint/restrict-template-expressions': 'off',
     'n/no-callback-literal': 'off',
-    '@typescript-eslint/array-type': 'off'
+    '@typescript-eslint/array-type': 'off',
+    'ernie-plugin/path-checker': 'error'
   },
   overrides: [
     {

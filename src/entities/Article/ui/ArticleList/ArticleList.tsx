@@ -1,7 +1,5 @@
-import { ArticleListItem } from 'entities/Article/ui/ArticleListItem/ArticleListItem'
-import {
-  ArticleListItemSceleton
-} from 'entities/Article/ui/ArticleListItem/ArticleListItemSceleton'
+import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
+import { ArticleListItemSceleton } from '../ArticleListItem/ArticleListItemSceleton'
 import { type HTMLAttributeAnchorTarget, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'

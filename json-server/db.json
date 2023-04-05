@@ -53,6 +53,12 @@
       "userId": "1",
       "text": "test",
       "id": "w9lGJyu"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "test me",
+      "id": "JZWunTL"
     }
   ],
   "users": [

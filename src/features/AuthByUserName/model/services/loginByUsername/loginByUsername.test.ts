@@ -1,7 +1,5 @@
 import { userActions } from 'entities/User'
-import {
-  loginByUsername
-} from 'features/AuthByUserName/model/services/loginByUsername/loginByUsername'
+import { loginByUsername } from './loginByUsername'
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
 
 describe('loginByUsername.test', () => {
@@ -37,12 +35,18 @@ describe('loginByUsername.test', () => {
   // })
 
   test('success login', async () => {
-    const userValue = { username: 'admin', id: '1' }
+    const userValue = {
+      username: 'admin',
+      id: '1'
+    }
 
     const thunk = new TestAsyncThunk(loginByUsername)
 
     thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }))
-    const result = await thunk.callThunk({ username: 'admin', password: '123 ' })
+    const result = await thunk.callThunk({
+      username: 'admin',
+      password: '123 '
+    })
 
     expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setUserData(userValue))
     expect(thunk.dispatch).toHaveBeenCalledTimes(3)
@@ -54,7 +58,10 @@ describe('loginByUsername.test', () => {
     const thunk = new TestAsyncThunk(loginByUsername)
     thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }))
 
-    const result = await thunk.callThunk({ username: 'admin', password: '123 ' })
+    const result = await thunk.callThunk({
+      username: 'admin',
+      password: '123 '
+    })
 
     expect(thunk.api.post).toBeCalled()
     expect(thunk.dispatch).toHaveBeenCalledTimes(2)

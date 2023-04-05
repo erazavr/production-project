@@ -1,6 +1,6 @@
 import { getArticleDetailsData } from 'entities/Article'
 import { getUserAuthData } from 'entities/User'
-import { getCanArticleEdit } from 'pages/ArticleDetailsPage/model/selectors/article'
+import { getCanArticleEdit } from '../../model/selectors/article'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'

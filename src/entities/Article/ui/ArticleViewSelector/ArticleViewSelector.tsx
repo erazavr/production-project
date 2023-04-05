@@ -1,3 +1,4 @@
+import { ArticleView } from '../../model/types/article'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -6,7 +7,6 @@ import ListIcon from 'shared/assets/icons/list-icon.svg'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Button, ButtonVariant } from 'shared/ui/Button/Button'
 import { Icon } from 'shared/ui/Icon/Icon'
-import { ArticleView } from '../../model/types/article'
 
 import cls from './ArticleViewSelector.module.scss'
 

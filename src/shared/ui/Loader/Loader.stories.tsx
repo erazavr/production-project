@@ -4,7 +4,7 @@ import React from 'react'
 import {
   ThemeDecorator
 } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Loader } from 'shared/ui/Loader/Loader'
+import { Loader } from './Loader'
 
 export default {
   title: 'shared/Loader',

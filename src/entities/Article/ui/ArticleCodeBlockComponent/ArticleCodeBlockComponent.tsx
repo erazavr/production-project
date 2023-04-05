@@ -1,4 +1,4 @@
-import { type ArticleCodeBlock } from 'entities/Article/model/types/article'
+import { type ArticleCodeBlock } from '../../model/types/article'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { memo } from 'react'

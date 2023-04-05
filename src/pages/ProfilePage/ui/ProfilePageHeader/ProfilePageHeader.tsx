@@ -1,5 +1,5 @@
 import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile'
-import { getCanEditProfile } from 'pages/ProfilePage/model/selectors/getCanEditProfile'
+import { getCanEditProfile } from '../../model/selectors/getCanEditProfile'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'

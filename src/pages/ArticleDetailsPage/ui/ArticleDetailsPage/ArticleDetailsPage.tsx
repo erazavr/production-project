@@ -3,14 +3,14 @@ import { CommentList } from 'entities/Comment'
 import { AddCommentForm } from 'features/addCommentForm'
 import {
   getArticleRecommendationsIsLoading
-} from 'pages/ArticleDetailsPage/model/selectors/recommendations'
+} from '../../model/selectors/recommendations'
 import {
   fetchArticleRecommendations
-} from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations'
-import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices'
+} from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations'
+import { articleDetailsPageReducer } from '../../model/slices'
 import {
   ArticleDetailsPageHeader
-} from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader'
+} from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -79,7 +79,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <Text size={TextSize.L} title={t('Рекомендуем')}/>
         <ArticleList
           target={'_blank'}
-          articles={ recommendations}
+          articles={recommendations}
           isLoading={recommendationsIsLoading}
           className={cls.recommendations}
         />
