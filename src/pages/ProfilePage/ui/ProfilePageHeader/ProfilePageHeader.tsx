@@ -1,4 +1,5 @@
 import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile'
+import { HStack } from 'shared/ui/Stack'
 import { getCanEditProfile } from '../../model/selectors/getCanEditProfile'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -7,8 +8,6 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { Button, ButtonVariant } from 'shared/ui/Button/Button'
 import { Text } from 'shared/ui/Text/Text'
-
-import cls from './ProfilePageHeader.module.scss'
 
 interface ProfilePageHeaderProps {
   className?: string
@@ -35,28 +34,28 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   }, [dispatch])
 
   return (
-    <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+    <HStack max justify={'between'} className={classNames('', {}, [className])}>
       <Text title={t('Профиль')}/>
-      {canEdit && <div className={cls.buttonsWrapper}>
+      {canEdit && <div >
         {readonly
           ? (
-            <Button onClick={onEdit} variant={ButtonVariant.OUTLINE} className={cls.editBtn}>
+            <Button onClick={onEdit} variant={ButtonVariant.OUTLINE} >
               {t('Редактировать')}
             </Button>
           )
           : (
-            <>
-              <Button onClick={onCancelEdit} variant={ButtonVariant.OUTLINE_RED} className={cls.editBtn}>
+            <HStack gap={'8'}>
+              <Button onClick={onCancelEdit} variant={ButtonVariant.OUTLINE_RED} >
                 {t('Отменить')}
               </Button>
-              <Button onClick={onSave} variant={ButtonVariant.OUTLINE} className={cls.saveBtn}>
+              <Button onClick={onSave} variant={ButtonVariant.OUTLINE} >
                 {t('Сохранить')}
               </Button>
-            </>
+            </HStack>
           )
         }
       </div>}
 
-    </div>
+    </HStack>
   )
 }

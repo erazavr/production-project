@@ -1,6 +1,7 @@
 import { ArticleDetails, ArticleList } from 'entities/Article'
 import { CommentList } from 'entities/Comment'
 import { AddCommentForm } from 'features/addCommentForm'
+import { VStack } from 'shared/ui/Stack'
 import {
   getArticleRecommendationsIsLoading
 } from '../../model/selectors/recommendations'
@@ -74,18 +75,20 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers}>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <ArticleDetailsPageHeader/>
-        <ArticleDetails id={id}/>
-        <Text size={TextSize.L} title={t('Рекомендуем')}/>
-        <ArticleList
-          target={'_blank'}
-          articles={recommendations}
-          isLoading={recommendationsIsLoading}
-          className={cls.recommendations}
-        />
-        <Text size={TextSize.L} title={t('Комментарии')} className={cls.commentTitle}/>
-        <AddCommentForm onSendComment={onSendComment}/>
-        <CommentList isLoading={commentsIsLoading} comments={comments}/>
+        <VStack gap={'16'} max>
+          <ArticleDetailsPageHeader/>
+          <ArticleDetails id={id}/>
+          <Text size={TextSize.L} title={t('Рекомендуем')}/>
+          <ArticleList
+            target={'_blank'}
+            articles={recommendations}
+            isLoading={recommendationsIsLoading}
+            className={cls.recommendations}
+          />
+          <Text size={TextSize.L} title={t('Комментарии')} className={cls.commentTitle}/>
+          <AddCommentForm onSendComment={onSendComment}/>
+          <CommentList isLoading={commentsIsLoading} comments={comments}/>
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   )

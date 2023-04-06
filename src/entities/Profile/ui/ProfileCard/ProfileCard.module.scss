@@ -4,29 +4,13 @@
   border-radius: var(--border-radius);
 }
 
-.input {
-  margin-top: 10px;
-}
-
 .loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 300px;
 }
 
 .error {
   border: 2px solid var(--red-light);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 300px;
-}
-
-.avatarWrapper {
-  display: flex;
-  width: 100%;
-  justify-content: center;
 }
 
 .editing {

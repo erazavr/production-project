@@ -2,6 +2,7 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Sceleton } from 'shared/ui/Sceleton/Sceleton'
+import { VStack } from 'shared/ui/Stack'
 import { Text } from 'shared/ui/Text/Text'
 import { type Comment } from '../../model/types/comment'
 import { useTranslation } from 'react-i18next'
@@ -39,12 +40,12 @@ export const CommentCard = memo(function CommentCard (props: CommentCardProps) {
   if (!comment) return null
 
   return (
-    <div className={classNames(cls.CommentCard, {}, [className])}>
+    <VStack max gap={'8'} className={classNames(cls.CommentCard, {}, [className])}>
       <AppLink to={RoutePath.profile + comment.user.id} className={cls.header}>
         <Avatar size={30} src={comment.user.avatar}/>
         <Text title={comment.user.username}/>
       </AppLink>
-      <Text text={comment.text} className={cls.text}/>
-    </div>
+      <Text text={comment.text} />
+    </VStack>
   )
 })
