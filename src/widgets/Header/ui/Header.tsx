@@ -6,7 +6,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
+import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Button, ButtonVariant } from 'shared/ui/Button/Button'
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown'
 import { Text, TextVariant } from 'shared/ui/Text/Text'
 
 import cls from './Header.module.scss'
@@ -37,9 +39,21 @@ export const Header = memo(function Header ({ className }: HeaderProps) {
         >
           {t('Создать статью')}
         </AppLink>
-        <Button variant={ButtonVariant.CLEAR} className={cls.links} onClick={onLogout}>
-          {t('Выйти')}
-        </Button>
+        <Dropdown
+          direction={'bottom left'}
+          className={cls.links}
+          items={
+            [
+              {
+                content: t('Профиль'),
+                href: RoutePath.profile + authData.id
+              },
+              {
+                content: t('Выйти'),
+                onClick: onLogout
+              }
+            ]
+          } trigger={<Avatar size={30} src={authData.avatar}/>}/>
       </header>
     )
   }
