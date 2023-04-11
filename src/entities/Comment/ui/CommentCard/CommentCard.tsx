@@ -27,13 +27,13 @@ export const CommentCard = memo(function CommentCard (props: CommentCardProps) {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
+      <VStack max className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
         <div className={cls.header}>
           <Sceleton width={30} height={30} borderRadius={'50%'}/>
           <Sceleton height={16} width={100}/>
         </div>
         <Sceleton width={'100%'} height={50} className={cls.text}/>
-      </div>
+      </VStack>
     )
   }
 
