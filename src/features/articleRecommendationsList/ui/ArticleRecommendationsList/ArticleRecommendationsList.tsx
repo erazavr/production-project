@@ -15,7 +15,7 @@ export const ArticleRecommendationsList = memo(function ArticleRecommendationLis
   const { t } = useTranslation()
   const { isLoading, data: articles, error } = useGetArticleRecommendationsListQuery(3)
 
-  if (isLoading || error) {
+  if (isLoading || error || !articles) {
     return null
   }
 

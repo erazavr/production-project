@@ -72,9 +72,9 @@ export const Input = memo(function Input (props: InputProps) {
 
       <div className={cls.caretWrapper}>
         <input
+          {...rest}
           ref={ref}
           autoFocus
-          {...rest}
           type={type}
           value={value}
           onChange={onChangeHandler}
