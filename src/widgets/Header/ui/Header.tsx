@@ -1,4 +1,4 @@
-import { getUserAuthData, userActions } from 'entities/User'
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User'
 import { LoginModal } from 'features/AuthByUserName'
 import { memo, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -20,6 +20,9 @@ interface HeaderProps {
 export const Header = memo(function Header ({ className }: HeaderProps) {
   const [isAuthModal, setIsAuthModal] = useState(false)
   const authData = useSelector(getUserAuthData)
+  const isAdmin = useSelector(isUserAdmin)
+  const isManager = useSelector(isUserManager)
+
   const dispatch = useDispatch()
 
   const { t } = useTranslation()
@@ -28,6 +31,8 @@ export const Header = memo(function Header ({ className }: HeaderProps) {
   const closeAuthModal = useCallback(() => setIsAuthModal(false), [])
 
   const onLogout = useCallback(() => dispatch(userActions.logout()), [dispatch])
+
+  const isAdminPanelAvailable = isAdmin || isManager
 
   if (authData) {
     return (
@@ -44,6 +49,12 @@ export const Header = memo(function Header ({ className }: HeaderProps) {
           className={cls.links}
           items={
             [
+              ...(isAdminPanelAvailable
+                ? [{
+                  content: t('Админка'),
+                  href: RoutePath.admin_panel
+                }]
+                : []),
               {
                 content: t('Профиль'),
                 href: RoutePath.profile + authData.id

@@ -36,14 +36,15 @@ const options = {
 }
 
 describe('features/EditableProfileCard', () => {
-  test('Режим рид онли должен переключиться', async () => {
+  beforeEach(() => {
     componentRender(<EditableProfileCard id="1" />, options)
+  })
+  test('Режим рид онли должен переключиться', async () => {
     await userEvent.click(screen.getByTestId('EditableProfileHeader.EditButton'))
     expect(screen.getByTestId('EditableProfileHeader.CancelButton')).toBeInTheDocument()
   })
 
   test('При отмене значения должны обнуляться', async () => {
-    componentRender(<EditableProfileCard id="1" />, options)
     await userEvent.click(screen.getByTestId('EditableProfileHeader.EditButton'))
 
     await userEvent.clear(screen.getByTestId('ProfileCard.firstname'))
@@ -62,7 +63,6 @@ describe('features/EditableProfileCard', () => {
   })
 
   test('Должна появиться ошибка', async () => {
-    componentRender(<EditableProfileCard id="1" />, options)
     await userEvent.click(screen.getByTestId('EditableProfileHeader.EditButton'))
 
     await userEvent.clear(screen.getByTestId('ProfileCard.firstname'))
@@ -74,7 +74,6 @@ describe('features/EditableProfileCard', () => {
 
   test('Если нет ошибок валидации, то на сервер должен уйти PUT запрос', async () => {
     const mockPutReq = jest.spyOn($api, 'put')
-    componentRender(<EditableProfileCard id="1" />, options)
     await userEvent.click(screen.getByTestId('EditableProfileHeader.EditButton'))
 
     await userEvent.type(screen.getByTestId('ProfileCard.firstname'), 'user')

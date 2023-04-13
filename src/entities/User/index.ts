@@ -1,3 +1,5 @@
+export { isUserAdmin, isUserManager, getUserRoles } from './model/selectors/roleSelectors'
+
 export {
   userActions,
   userReducer
