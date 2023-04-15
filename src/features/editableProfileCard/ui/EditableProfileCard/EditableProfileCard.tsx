@@ -27,7 +27,7 @@ import { ValidateProfileErrors } from '../../model/types/editableProfileCardSche
 
 interface EditableProfileCardProps {
   className?: string
-  id: string
+  id?: string
 }
 
 const initialReducers: ReducersList = {

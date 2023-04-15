@@ -1,5 +1,6 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import React from 'react'
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 
 import { ArticleDetailsComments } from './ArticleDetailsComments'
 
@@ -16,3 +17,4 @@ const Template: ComponentStory<typeof ArticleDetailsComments> = (args) =>
 
 export const Normal = Template.bind({})
 Normal.args = {}
+Normal.decorators = [StoreDecorator({})]

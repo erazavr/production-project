@@ -15,7 +15,7 @@ import { Text, TextSize } from 'shared/ui/Text/Text'
 
 interface ArticleDetailsCommentsProps {
   className?: string
-  id: string
+  id?: string
 }
 
 export const ArticleDetailsComments = memo(function ArticleDetailsComments (props: ArticleDetailsCommentsProps) {
