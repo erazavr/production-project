@@ -1,3 +1,4 @@
+import { ArticleBlockType } from '../../model/const/articleConsts'
 import { HStack, VStack } from 'shared/ui/Stack'
 import {
   ArticleCodeBlockComponent
@@ -32,7 +33,7 @@ import {
 } from '../../model/selectors/articleDetails'
 import { fetchArticleById } from '../../model/services/fetchArticleById'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
-import { type ArticleBlock, ArticleBlockType } from '../../model/types/article'
+import { type ArticleBlock } from '../../model/types/article'
 
 import cls from './ArticleDetails.module.scss'
 

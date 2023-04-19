@@ -5,9 +5,15 @@ import webpack from 'webpack'
 import { type BuildOptions } from './types/config'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import CopyPlugin from 'copy-webpack-plugin'
+import CircularDependencyPlugin from 'circular-dependency-plugin'
 
 export function buildPlugins (options: BuildOptions): webpack.WebpackPluginInstance[] {
-  const { isDev, paths, apiUrl, project } = options
+  const {
+    isDev,
+    paths,
+    apiUrl,
+    project
+  } = options
   const plugins = [
     new HtmlWebpackPlugin({ template: paths.html }),
     new webpack.ProgressPlugin(),
@@ -22,7 +28,10 @@ export function buildPlugins (options: BuildOptions): webpack.WebpackPluginInsta
     }),
     new CopyPlugin({
       patterns: [
-        { from: paths.locales, to: paths.buildLocales }
+        {
+          from: paths.locales,
+          to: paths.buildLocales
+        }
       ]
     })
   ]
@@ -31,6 +40,10 @@ export function buildPlugins (options: BuildOptions): webpack.WebpackPluginInsta
     plugins.push(new webpack.HotModuleReplacementPlugin())
     plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }))
     plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }))
+    plugins.push(new CircularDependencyPlugin({
+      exclude: /node_modules/,
+      failOnError: true
+    }))
   }
 
   return plugins

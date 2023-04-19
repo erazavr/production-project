@@ -1,4 +1,4 @@
-import { ArticleView } from '../../model/types/article'
+import { ArticleView } from '../../model/const/articleConsts'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 

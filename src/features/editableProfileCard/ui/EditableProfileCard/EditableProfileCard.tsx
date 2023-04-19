@@ -1,6 +1,7 @@
 import { type Country } from 'entities/Country'
 import { type Currency } from 'entities/Currency'
 import { ProfileCard } from 'entities/Profile'
+import { ValidateProfileErrors } from '../../model/consts/consts'
 import { VStack } from 'shared/ui/Stack'
 import { EditableProfileHeader } from '../EditableProfileHeader/EditableProfileHeader'
 import { memo, useCallback } from 'react'
@@ -23,7 +24,6 @@ import {
 } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors'
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
 import { profileActions, profileReducer } from '../../model/slice/profileSlice'
-import { ValidateProfileErrors } from '../../model/types/editableProfileCardSchema'
 
 interface EditableProfileCardProps {
   className?: string
