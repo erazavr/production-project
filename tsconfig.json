@@ -22,7 +22,7 @@
     }
   },
   "include": [
-    "config/jest",
+    "config",
     "./config/storybook/webpack.config.ts",
     "./webpack.config.ts",
     "./config/jest/setupTests.ts",
