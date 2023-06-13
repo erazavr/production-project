@@ -1,6 +1,6 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import React from 'react'
-import { Button } from '../Button/Button'
+import { Button } from '../../../Button/Button'
 
 import { Dropdown } from './Dropdown'
 

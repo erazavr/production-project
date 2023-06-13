@@ -2,9 +2,11 @@ import { Listbox as HListBox } from '@headlessui/react'
 import { type ReactNode } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { type DropDownDirection } from 'shared/types/ui'
-import { Button } from '../Button/Button'
-import { HStack } from '../Stack'
+import { Button } from '../../../Button/Button'
+import { HStack } from '../../../Stack'
+import { mapDirectionClasses } from '../../styles/consts'
 import cls from './ListBox.module.scss'
+import popupCls from '../../styles/popup.module.scss'
 
 export interface ListBoxItem {
   value: string
@@ -21,13 +23,6 @@ interface ListBoxProps {
   readonly?: boolean
   direction?: DropDownDirection
   label?: string
-}
-
-const mapDirectionClasses: Record<DropDownDirection, string> = {
-  'bottom left': cls.optionsBottomLeft,
-  'bottom right': cls.optionsBottomRight,
-  'top left': cls.optionsTopLeft,
-  'top right': cls.optionsTopRight
 }
 
 export function ListBox (props: ListBoxProps) {
@@ -52,7 +47,7 @@ export function ListBox (props: ListBoxProps) {
         disabled={readonly}
         as={'div'}
         value={value}
-        className={classNames(cls.ListBox, {}, [className])}
+        className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
         onChange={onChange}
       >
         <HListBox.Button className={cls.trigger}>
@@ -75,8 +70,8 @@ export function ListBox (props: ListBoxProps) {
                   classNames(
                     cls.item,
                     {
-                      [cls.active]: active,
-                      [cls.disabled]: item.disabled
+                      [popupCls.active]: active,
+                      [popupCls.disabled]: item.disabled
                     })
                 }
                 >
