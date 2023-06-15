@@ -7,8 +7,6 @@ import { memo, useCallback } from 'react'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Dropdown } from 'shared/ui/Popups'
 
-import cls from './AvatarDropdown.module.scss'
-
 interface AvatarDropdownProps {
   className?: string
 }
@@ -29,7 +27,7 @@ export const AvatarDropdown = memo(function AvatarDropdown (props: AvatarDropdow
   }
 
   return (
-    <div className={classNames(cls.AvatarDropdown, {}, [className])}>
+    <div className={classNames('', {}, [className])}>
       <Dropdown
         direction={'bottom left'}
         items={
