@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import NotificationIcon from 'shared/assets/icons/notification-20-20.svg'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { memo, useCallback, useState } from 'react'
+import { AnimationProvider } from 'shared/lib/components/AnimationProvider'
 import { useDevice } from 'shared/lib/hooks/useDevice'
 import { Button, ButtonVariant } from 'shared/ui/Button/Button'
 import { Drawer } from 'shared/ui/Drawer/Drawer'
@@ -50,9 +51,11 @@ export const NotificationButton = memo(function NotificationButton (props: Notif
         : (
           <>
             {trigger}
-            <Drawer isOpen={isOpen} onClose={onCloseDrawer }>
-              <NotificationList/>
-            </Drawer>
+            <AnimationProvider>
+              <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                <NotificationList/>
+              </Drawer>
+            </AnimationProvider>
           </>
         )}
     </>
