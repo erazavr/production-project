@@ -2,11 +2,11 @@ import { ArticleView } from '../../model/const/articleConsts'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import GridIcon from 'shared/assets/icons/grid-icon.svg'
-import ListIcon from 'shared/assets/icons/list-icon.svg'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Button, ButtonVariant } from 'shared/ui/Button/Button'
-import { Icon } from 'shared/ui/Icon/Icon'
+import GridIcon from '@/shared/assets/icons/grid-icon.svg'
+import ListIcon from '@/shared/assets/icons/list-icon.svg'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { Button, ButtonVariant } from '@/shared/ui/Button/Button'
+import { Icon } from '@/shared/ui/Icon/Icon'
 
 import cls from './ArticleViewSelector.module.scss'
 

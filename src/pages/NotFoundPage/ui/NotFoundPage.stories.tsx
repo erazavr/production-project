@@ -1,11 +1,11 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-import { Theme } from 'app/providers/ThemeProvider'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { NotFoundPage } from './NotFoundPage'
 import React from 'react'
 import {
   ThemeDecorator
-} from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
+} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
 export default {
   title: 'pages/NotFoundPage',

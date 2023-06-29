@@ -1,14 +1,14 @@
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList'
 import { memo, useCallback } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import {
   DynamicModuleLoader,
   type ReducersList
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
-import { Page } from 'widgets/Page/Page'
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect'
+import { Page } from '@/widgets/Page/Page'
 import {
   fetchNextArticlesPage
 } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'

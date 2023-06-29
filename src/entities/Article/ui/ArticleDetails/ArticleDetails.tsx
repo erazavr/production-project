@@ -1,5 +1,5 @@
 import { ArticleBlockType } from '../../model/const/articleConsts'
-import { HStack, VStack } from 'shared/ui/Stack'
+import { HStack, VStack } from '@/shared/ui/Stack'
 import {
   ArticleCodeBlockComponent
 } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
@@ -12,20 +12,20 @@ import {
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import CalendarIcon from 'shared/assets/icons/calendar-icon.svg'
+import CalendarIcon from '@/shared/assets/icons/calendar-icon.svg'
 
-import EyeIcon from 'shared/assets/icons/eye-icon.svg'
-import { classNames } from 'shared/lib/classNames/classNames'
+import EyeIcon from '@/shared/assets/icons/eye-icon.svg'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import {
   DynamicModuleLoader,
   type ReducersList
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import { Icon } from 'shared/ui/Icon/Icon'
-import { Sceleton } from 'shared/ui/Sceleton/Sceleton'
-import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text'
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Icon } from '@/shared/ui/Icon/Icon'
+import { Sceleton } from '@/shared/ui/Sceleton/Sceleton'
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text/Text'
 import {
   getArticleDetailsData,
   getArticleDetailsError,

@@ -10,7 +10,7 @@
     "baseUrl": ".",
     "strict": true,
     "paths": {
-      "*": ["./src/*"]
+      "@/*": ["./src/*"]
     },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -28,5 +28,6 @@
     "./config/jest/setupTests.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx",
+    "./scripts/updateImports.ts"
   ]
 }

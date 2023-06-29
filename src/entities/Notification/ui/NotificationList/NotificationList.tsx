@@ -1,10 +1,10 @@
-import { Sceleton } from 'shared/ui/Sceleton/Sceleton'
+import { Sceleton } from '@/shared/ui/Sceleton/Sceleton'
 import { useNotifications } from '../../api/notificationApi'
 import { NotificationItem } from '../NotificationItem/NotificationItem'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { memo } from 'react'
-import { VStack } from 'shared/ui/Stack'
+import { VStack } from '@/shared/ui/Stack'
 
 import cls from './NotificationList.module.scss'
 

@@ -1,15 +1,15 @@
-import { ArticleDetails } from 'entities/Article'
-import { ArticleRecommendationsList } from 'features/articleRecommendationsList'
+import { ArticleDetails } from '@/entities/Article'
+import { ArticleRecommendationsList } from '@/features/articleRecommendationsList'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import {
   DynamicModuleLoader,
   type ReducersList
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { VStack } from 'shared/ui/Stack'
-import { Page } from 'widgets/Page/Page'
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { VStack } from '@/shared/ui/Stack'
+import { Page } from '@/widgets/Page/Page'
 import { articleDetailsPageReducer } from '../../model/slices'
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'

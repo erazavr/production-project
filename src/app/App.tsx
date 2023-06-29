@@ -1,10 +1,10 @@
-import { AppRouter } from 'app/providers/router'
-import { getUserInited, userActions } from 'entities/User'
+import { AppRouter } from '@/app/providers/router'
+import { getUserInited, userActions } from '@/entities/User'
 import React, { Suspense, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Header } from 'widgets/Header'
-import { SideBar } from 'widgets/SideBar/ui/SideBar'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { Header } from '@/widgets/Header'
+import { SideBar } from '@/widgets/SideBar/ui/SideBar'
 
 export default function App () {
   const dispatch = useDispatch()
