@@ -1,4 +1,5 @@
 import { ArticleDetails } from '@/entities/Article'
+import { ArticleRating } from '@/features/articleRating'
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -28,13 +29,13 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const { t } = useTranslation()
   const { id } = useParams<{ id: string }>()
 
-  // if (!id) {
-  //   return (
-  //     <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-  //       {t('Статья не найдена')}
-  //     </div>
-  //   )
-  // }
+  if (!id) {
+    return (
+      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+        {t('Статья не найдена')}
+      </div>
+    )
+  }
 
   return (
     <DynamicModuleLoader reducers={reducers}>
@@ -42,6 +43,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <VStack gap={'16'} max>
           <ArticleDetailsPageHeader/>
           <ArticleDetails id={id}/>
+          <ArticleRating articleId={id}/>
           <ArticleRecommendationsList/>
           <ArticleDetailsComments id={id}/>
         </VStack>
