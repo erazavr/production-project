@@ -7,7 +7,7 @@ import withMock from 'storybook-addon-mock'
 import { ArticleRecommendationsList } from './ArticleRecommendationsList'
 
 export default {
-  title: 'features/ArticleRecommendationList/ArticleRecommendationList',
+  title: 'features/ArticleRecommendationList',
   component: ArticleRecommendationsList,
   argTypes: {
     backgroundColor: { control: 'color' }

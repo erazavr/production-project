@@ -4,7 +4,7 @@ import React from 'react'
 import { ArticleViewSelector } from './ArticleViewSelector'
 
 export default {
-  title: 'features/ArticleViewSelector',
+  title: 'entities/ArticleViewSelector',
   component: ArticleViewSelector,
   argTypes: {
     backgroundColor: { control: 'color' }

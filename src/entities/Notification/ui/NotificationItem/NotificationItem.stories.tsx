@@ -4,7 +4,7 @@ import React from 'react'
 import { NotificationItem } from './NotificationItem'
 
 export default {
-  title: 'features/NotificationItem',
+  title: 'entities/NotificationItem',
   component: NotificationItem,
   argTypes: {
     backgroundColor: { control: 'color' }
