@@ -1,6 +1,5 @@
-import { type ChangeEvent, memo, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames'
+import { type ChangeEvent, useMemo } from 'react'
 
 import cls from './Select.module.scss'
 
@@ -18,7 +17,7 @@ interface SelectProps<T extends string> {
   readonly?: boolean
 }
 
-export const Select = <T extends string>(props: SelectProps<T>) => {
+export const Select = <T extends string> (props: SelectProps<T>) => {
   const {
     className,
     label,
@@ -27,8 +26,6 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
     options,
     readonly
   } = props
-  const { t } = useTranslation()
-
   const onChangeHandler = (event: ChangeEvent<HTMLSelectElement>) => {
     if (onChange) {
       onChange(event.target.value as T)

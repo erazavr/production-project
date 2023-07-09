@@ -1,8 +1,7 @@
-import { type ArticleImageBlock } from '../../model/types/article'
-import { memo } from 'react'
-import { useTranslation } from 'react-i18next'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Text, TextAlign } from '@/shared/ui/Text/Text'
+import { memo } from 'react'
+import { type ArticleImageBlock } from '../../model/types/article'
 
 import cls from './ArticleImageBlockComponent.module.scss'
 
@@ -17,7 +16,6 @@ export const ArticleImageBlockComponent = memo(
       className,
       block
     } = props
-    const { t } = useTranslation()
 
     return (
       <div className={classNames('', {}, [className])}>

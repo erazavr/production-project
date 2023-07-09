@@ -74,7 +74,7 @@ module.exports = {
     '@typescript-eslint/restrict-template-expressions': 'off',
     'n/no-callback-literal': 'off',
     '@typescript-eslint/array-type': 'off',
-    'ernie-plugin/path-checker': 'error',
+    'ernie-plugin/path-checker': ['error', { alias: '@' }],
     '@typescript-eslint/consistent-type-imports': 'off'
   },
   overrides: [

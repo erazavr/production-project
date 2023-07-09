@@ -1,10 +1,9 @@
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { Sceleton } from '@/shared/ui/Sceleton/Sceleton'
+import { VStack } from '@/shared/ui/Stack'
+import { memo } from 'react'
 import { useNotifications } from '../../api/notificationApi'
 import { NotificationItem } from '../NotificationItem/NotificationItem'
-import { useTranslation } from 'react-i18next'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { memo } from 'react'
-import { VStack } from '@/shared/ui/Stack'
 
 import cls from './NotificationList.module.scss'
 
@@ -14,7 +13,6 @@ interface NotificationListProps {
 
 export const NotificationList = memo(function NotificationList (props: NotificationListProps) {
   const { className } = props
-  const { t } = useTranslation()
 
   const {
     data,

@@ -1,13 +1,12 @@
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink } from '@/shared/ui/AppLink/AppLink'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { Sceleton } from '@/shared/ui/Sceleton/Sceleton'
 import { VStack } from '@/shared/ui/Stack'
 import { Text } from '@/shared/ui/Text/Text'
-import { type Comment } from '../../model/types/comment'
-import { useTranslation } from 'react-i18next'
-import { classNames } from '@/shared/lib/classNames/classNames'
 import { memo } from 'react'
+import { type Comment } from '../../model/types/comment'
 
 import cls from './CommentCard.module.scss'
 
@@ -23,7 +22,6 @@ export const CommentCard = memo(function CommentCard (props: CommentCardProps) {
     comment,
     isLoading
   } = props
-  const { t } = useTranslation()
 
   if (isLoading) {
     return (

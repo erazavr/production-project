@@ -1,6 +1,6 @@
 import { RatingCard } from '@/entities/Rating'
 import { getUserAuthData } from '@/entities/User'
-import { useGetArticleRating, useRateArticle } from '@/features/articleRating/api/articleRatingApi'
+import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi'
 import { Sceleton } from '@/shared/ui/Sceleton/Sceleton'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'

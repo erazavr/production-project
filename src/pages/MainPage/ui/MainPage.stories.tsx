@@ -1,12 +1,9 @@
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import { Theme } from '@/app/providers/ThemeProvider'
-import { Normal } from '@/pages/ArticlesPage/ui/ArticlesPage/ArticlesPage.stories'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
-import MainPage from './MainPage'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import React from 'react'
-import {
-  ThemeDecorator
-} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import MainPage from './MainPage'
 
 export default {
   title: 'pages/MainPage',

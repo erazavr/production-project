@@ -1,10 +1,9 @@
-import { type Notification } from '../../model/types/notifications'
-import { memo } from 'react'
-import { useTranslation } from 'react-i18next'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink } from '@/shared/ui/AppLink/AppLink'
 import { Card, CardVariant } from '@/shared/ui/Card/Card'
 import { Text } from '@/shared/ui/Text/Text'
+import { memo } from 'react'
+import { type Notification } from '../../model/types/notifications'
 
 import cls from './NotificationItem.module.scss'
 
@@ -18,7 +17,6 @@ export const NotificationItem = memo(function NotificationItem (props: Notificat
     className,
     item
   } = props
-  const { t } = useTranslation()
 
   const content = (
     <Card variant={CardVariant.OUTLINED}
