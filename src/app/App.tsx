@@ -4,7 +4,7 @@ import React, { Suspense, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Header } from '@/widgets/Header'
-import { SideBar } from '@/widgets/SideBar/ui/SideBar'
+import { SideBar } from '@/widgets/SideBar'
 
 export default function App () {
   const dispatch = useDispatch()

@@ -4,11 +4,11 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { Button, ButtonSize, ButtonVariant } from '@/shared/ui/Button/Button'
 import { VStack } from '@/shared/ui/Stack'
 import { LangSwitcher } from '@/widgets/LangSwitcher'
-import { getSideBarItems } from '../../../model/selectors/getSideBarItems'
-import { SideBarItem } from '../../SideBarItem/SideBarItem'
+import { getSideBarItems } from '../../model/selectors/getSideBarItems'
 import { ThemeSwitcher } from '@/widgets/ThemeSwitcher'
 
 import cls from './SideBar.module.scss'
+import { SideBarItem } from '../SideBarItem/SideBarItem'
 
 interface SideBarProps {
   className?: string

@@ -5,7 +5,7 @@ import { type AddCommentFormSchema } from '@/features/addCommentForm'
 import { type LoginSchema } from '@/features/AuthByUserName'
 import { type ProfileSchema } from '@/features/editableProfileCard'
 import { type UISchema } from '@/features/UI'
-import { type ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage/model/types'
+import { type ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage'
 import { type ArticlesPageSchema } from '@/pages/ArticlesPage'
 import { type rtkApi } from '@/shared/api/rtkApi'
 import {
