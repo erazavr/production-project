@@ -1,5 +1,5 @@
-import { routeConfig } from '@/app/providers/router/config/routerConfig'
-import { RequireAuth } from '@/app/providers/router/ui/RequireAuth'
+import { routeConfig } from '../config/routerConfig'
+import { RequireAuth } from '../ui/RequireAuth'
 import { AppRouteProps } from '@/shared/types/router'
 import React, { memo, Suspense, useCallback } from 'react'
 import { Route, Routes } from 'react-router-dom'

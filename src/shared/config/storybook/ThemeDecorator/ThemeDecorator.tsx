@@ -1,5 +1,7 @@
+import { Theme } from '@/shared/const/theme'
 import { type Story } from '@storybook/react'
-import { type Theme, ThemeProvider } from '@/app/providers/ThemeProvider'
+// eslint-disable-next-line ernie-plugin/layer-imports
+import { ThemeProvider } from '@/app/providers/ThemeProvider'
 
 export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => {
   return (

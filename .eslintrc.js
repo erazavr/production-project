@@ -75,6 +75,13 @@ module.exports = {
     'n/no-callback-literal': 'off',
     '@typescript-eslint/array-type': 'off',
     'ernie-plugin/path-checker': ['error', { alias: '@' }],
+    'ernie-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+      }
+    ],
     'ernie-plugin/public-api-imports': [
       'error',
       {
