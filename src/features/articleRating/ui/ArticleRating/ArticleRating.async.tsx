@@ -1,4 +1,4 @@
-import { Sceleton } from '@/shared/ui/Sceleton/Sceleton'
+import { Sceleton } from '@/shared/ui/Sceleton'
 import { lazy, Suspense } from 'react'
 import { ArticleRatingProps } from './ArticleRating'
 

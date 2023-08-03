@@ -22,10 +22,10 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect'
-import { Avatar } from '@/shared/ui/Avatar/Avatar'
-import { Icon } from '@/shared/ui/Icon/Icon'
-import { Sceleton } from '@/shared/ui/Sceleton/Sceleton'
-import { Text, TextAlign, TextSize } from '@/shared/ui/Text/Text'
+import { Avatar } from '@/shared/ui/Avatar'
+import { Icon } from '@/shared/ui/Icon'
+import { Sceleton } from '@/shared/ui/Sceleton'
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text'
 import {
   getArticleDetailsData,
   getArticleDetailsError,

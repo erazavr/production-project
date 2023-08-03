@@ -4,7 +4,7 @@ import { ArticleListItemSceleton } from '../ArticleListItem/ArticleListItemScele
 import { type HTMLAttributeAnchorTarget, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Text, TextSize } from '@/shared/ui/Text/Text'
+import { Text, TextSize } from '@/shared/ui/Text'
 import { type Article } from '../../model/types/article'
 
 import cls from './ArticleList.module.scss'

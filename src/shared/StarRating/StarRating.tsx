@@ -1,4 +1,4 @@
-import { Icon } from '@/shared/ui/Icon/Icon'
+import { Icon } from '@/shared/ui/Icon'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { memo, useState } from 'react'
 import StarIcon from '@/shared/assets/icons/star.svg'

@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Sceleton } from '@/shared/ui/Sceleton/Sceleton'
+import { Sceleton } from '@/shared/ui/Sceleton'
 import { VStack } from '@/shared/ui/Stack'
 import { memo } from 'react'
 import { useNotifications } from '../../api/notificationApi'

@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { memo, useCallback } from 'react'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
-import { Text, TextSize } from '@/shared/ui/Text/Text'
+import { Text, TextSize } from '@/shared/ui/Text'
 
 interface ArticleDetailsCommentsProps {
   className?: string
