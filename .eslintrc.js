@@ -19,11 +19,13 @@ module.exports = {
     '@typescript-eslint',
     'i18next',
     'react-hooks',
-    'ernie-plugin'
+    'ernie-plugin',
+    'unused-imports'
   ],
   rules: {
     'react/jsx-indent': [2, 2],
     indent: [2, 2],
+    'unused-imports/no-unused-imports': 'error',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
