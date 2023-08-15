@@ -19,7 +19,7 @@ const article = {
   id: '1',
   title: 'Javascript news asfasjf asfjkask f',
   subtitle: 'Что нового в JS за 2022 год?',
-  img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+  img: 'https://static.javatpoint.com/images/javascript/javascript_logo.png',
   views: 1022,
   createdAt: '26.02.2022',
   user: {

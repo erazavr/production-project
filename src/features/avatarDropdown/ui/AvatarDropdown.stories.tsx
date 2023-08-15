@@ -1,3 +1,4 @@
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import React from 'react'
 
@@ -15,3 +16,4 @@ const Template: ComponentStory<typeof AvatarDropdown> = (args) => <AvatarDropdow
 
 export const Normal = Template.bind({})
 Normal.args = {}
+Normal.decorators = [StoreDecorator({})]
