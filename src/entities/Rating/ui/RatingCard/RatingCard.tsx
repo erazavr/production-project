@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useDevice } from '@/shared/lib/hooks/useDevice'
-import { StarRating } from '@/shared/StarRating/StarRating'
+import { StarRating } from '@/shared/ui/StarRating/StarRating'
 import { Button, ButtonSize, ButtonVariant } from '@/shared/ui/Button'
 import { Card } from '@/shared/ui/Card'
 import { Drawer } from '@/shared/ui/Drawer'

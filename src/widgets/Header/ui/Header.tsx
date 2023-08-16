@@ -2,15 +2,15 @@ import { getUserAuthData } from '@/entities/User'
 import { LoginModal } from '@/features/AuthByUserName'
 import { AvatarDropdown } from '@/features/avatarDropdown'
 import { NotificationButton } from '@/features/notificationButton'
-import { RoutePath } from '@/shared/const/router'
-import { memo, useCallback, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useSelector } from 'react-redux'
+import { getRouteArticleCreate } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
 import { Button, ButtonVariant } from '@/shared/ui/Button'
 import { HStack } from '@/shared/ui/Stack'
 import { Text, TextVariant } from '@/shared/ui/Text'
+import { memo, useCallback, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
 
 import cls from './Header.module.scss'
 
@@ -32,7 +32,7 @@ export const Header = memo(function Header ({ className }: HeaderProps) {
       <header className={classNames(cls.Header, {}, [className])}>
         <Text className={cls.appName} title={t('Blog')} variant={TextVariant.INVERTED}/>
         <AppLink
-          to={RoutePath.article_create}
+          to={getRouteArticleCreate()}
           theme={AppLinkTheme.SECONDARY}
         >
           {t('Создать статью')}

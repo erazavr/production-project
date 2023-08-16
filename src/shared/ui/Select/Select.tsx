@@ -4,7 +4,7 @@ import { type ChangeEvent, useMemo } from 'react'
 import cls from './Select.module.scss'
 
 export interface SelectOption<T extends string> {
-  value: string
+  value: T
   content: string
 }
 

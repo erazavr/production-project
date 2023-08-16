@@ -1,5 +1,5 @@
 import { getArticleDetailsData } from '@/entities/Article'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -24,12 +24,13 @@ export const ArticleDetailsPageHeader = memo(function ArticleDetailsPageHeader (
   const navigate = useNavigate()
 
   const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles)
+    navigate(getRouteArticles())
   }, [navigate])
 
   const onEditArticle = useCallback(() => {
-    navigate(`${RoutePath.article_details}${article?.id}/edit`)
-  }, [article?.id, navigate])
+    if (!article) return
+    navigate(getRouteArticleEdit(article.id))
+  }, [article, navigate])
 
   return (
     <HStack justify={'between'} max className={classNames('', {}, [className])}>
