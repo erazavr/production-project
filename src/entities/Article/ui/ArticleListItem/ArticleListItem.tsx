@@ -1,11 +1,13 @@
 import EyeIcon from '@/shared/assets/icons/eye-icon.svg'
 import { getRouteArticleDetails } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { AppImage } from '@/shared/ui/AppImage'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Button, ButtonVariant } from '@/shared/ui/Button'
 import { Card } from '@/shared/ui/Card'
 import { Icon } from '@/shared/ui/Icon'
+import { Sceleton } from '@/shared/ui/Sceleton'
 import { Text } from '@/shared/ui/Text'
 import { type HTMLAttributeAnchorTarget, memo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -52,7 +54,8 @@ export const ArticleListItem = memo(function ArticleListItem (props: ArticleList
           </div>
           <Text title={article.title} className={cls.title}/>
           {types}
-          <img src={article.img} alt={article.title} className={cls.img}/>
+          <AppImage fallback={<Sceleton width={'100%'} height={250}/>} src={article.img}
+            alt={article.title} className={cls.img}/>
           {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock}/>}
           <div className={cls.footer}>
             <AppLink target={target} to={getRouteArticleDetails(article.id)}>
@@ -75,7 +78,8 @@ export const ArticleListItem = memo(function ArticleListItem (props: ArticleList
     >
       <Card>
         <div className={cls.imageWrapper}>
-          <img src={article.img} alt={article.title} className={cls.img}/>
+          <AppImage fallback={<Sceleton width={200} height={200}/>} src={article.img}
+            alt={article.title} className={cls.img}/>
           <Text text={article.createdAt} className={cls.date}/>
         </div>
         <div className={cls.infoWrapper}>
