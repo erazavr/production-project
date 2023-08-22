@@ -1,5 +1,6 @@
 import { type StateSchema } from '@/app/providers/StoreProvider'
 import { getUIScrollByPath, UIActions } from '@/features/UI'
+import { TestProps } from '@/shared/types/tests'
 import React, { memo, type MutableRefObject, type UIEvent, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
@@ -11,7 +12,7 @@ import { useThrottle } from '@/shared/lib/hooks/useThrottle'
 
 import cls from './Page.module.scss'
 
-interface PageProps {
+interface PageProps extends TestProps {
   className?: string
   children: React.ReactNode
   onScrollEnd?: () => void
@@ -51,6 +52,7 @@ export const Page = memo(function Page (props: PageProps) {
     <main
       ref={wrapperRef}
       onScroll={onScroll}
+      data-testid={props['data-testid'] ?? 'Page'}
       className={classNames(cls.Page, {}, [className])}
     >
       {children}
