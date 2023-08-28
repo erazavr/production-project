@@ -1,5 +1,3 @@
-import { ArticleBlockType } from '../../model/const/articleConsts'
-import { HStack, VStack } from '@/shared/ui/Stack'
 import {
   ArticleCodeBlockComponent
 } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
@@ -9,6 +7,8 @@ import {
 import {
   ArticleTextBlockComponent
 } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
+import { ArticleBlockType } from '../../model/const/articleConsts'
+import { HStack, VStack } from '@/shared/ui/Stack'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
