@@ -5,7 +5,6 @@ import {
   type SyntheticEvent, useEffect, useRef,
   useState
 } from 'react'
-import { type Omit } from 'react-redux'
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames'
 
 import cls from './Input.module.scss'
