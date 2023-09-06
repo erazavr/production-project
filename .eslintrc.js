@@ -92,7 +92,9 @@ module.exports = {
       }
 
     ],
-    '@typescript-eslint/consistent-type-imports': 'off'
+    '@typescript-eslint/consistent-type-imports': 'off',
+    '@typescript-eslint/method-signature-style': 'off',
+    '@typescript-eslint/no-namespace': 'off'
   },
   overrides: [
     {
