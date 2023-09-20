@@ -28,7 +28,10 @@ const reducers: ReducersList = {
 }
 
 const AddCommentForm = memo(function AddCommentForm (props: AddCommentFormProps) {
-  const { className, onSendComment } = props
+  const {
+    className,
+    onSendComment
+  } = props
   const { t } = useTranslation()
 
   const text = useSelector(getAddCommentFormText)
@@ -46,14 +49,20 @@ const AddCommentForm = memo(function AddCommentForm (props: AddCommentFormProps)
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <HStack justify={'between'} max className={classNames(cls.AddCommentForm, {}, [className])}>
+      <HStack
+        data-testid={'AddCommentForm'}
+        justify={'between'}
+        max
+        className={classNames(cls.AddCommentForm, {}, [className])}
+      >
         <Input
           className={cls.input}
+          data-testid={'AddCommentForm.Input'}
           placeholder={t('Введите текст комментария')}
           value={text}
           onChange={onCommentTextChange}
         />
-        <Button onClick={onSendHandler}>{t('Отправить')}</Button>
+        <Button data-testid={'AddCommentForm.Button'} onClick={onSendHandler}>{t('Отправить')}</Button>
       </HStack>
     </DynamicModuleLoader>
   )

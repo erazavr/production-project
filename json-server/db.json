@@ -127,6 +127,17 @@
       "city": "Bishkek",
       "username": "22",
       "avatar": "https://static.javatpoint.com/images/javascript/javascript_logo.png"
+    },
+    {
+      "id": "4",
+      "first": "Test",
+      "lastname": "User",
+      "age": 22,
+      "currency": "KGS",
+      "country": "Ukraine",
+      "city": "Bishkek",
+      "username": "Test User",
+      "avatar": "https://static.javatpoint.com/images/javascript/javascript_logo.png"
     }
   ],
   "articles": [
