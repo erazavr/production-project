@@ -1,24 +1,26 @@
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-import React from 'react'
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
+import React from 'react';
 
-import { NotificationItem } from './NotificationItem'
+import { NotificationItem } from './NotificationItem';
 
 export default {
   title: 'entities/NotificationItem',
   component: NotificationItem,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
-} as ComponentMeta<typeof NotificationItem>
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof NotificationItem>;
 
-const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />
+const Template: ComponentStory<typeof NotificationItem> = args => (
+  <NotificationItem {...args} />
+);
 
-export const Normal = Template.bind({})
+export const Normal = Template.bind({});
 Normal.args = {
   item: {
     id: '1',
     title: 'title',
     description: 'description',
-    href: ''
-  }
-}
+    href: '',
+  },
+};

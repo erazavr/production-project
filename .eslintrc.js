@@ -1,18 +1,19 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
   },
   extends: [
     'plugin:react/recommended',
     'standard-with-typescript',
-    'plugin:i18next/recommended'
+    'plugin:i18next/recommended',
+    'prettier',
   ],
   parserOptions: {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: './tsconfig.json'
+    project: './tsconfig.json',
   },
   plugins: [
     'react',
@@ -20,18 +21,16 @@ module.exports = {
     'i18next',
     'react-hooks',
     'ernie-plugin',
-    'unused-imports'
+    'unused-imports',
   ],
   rules: {
-    'react/jsx-indent': [2, 2],
-    indent: [2, 2],
     'unused-imports/no-unused-imports': 'error',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     'react/jsx-filename-extension': [
       2,
-      { extensions: ['.js', '.jsx', '.ts', '.tsx'] }
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
@@ -54,14 +53,17 @@ module.exports = {
           'gap',
           'role',
           'as',
-          'borderRadius'
-        ]
-      }
+          'borderRadius',
+        ],
+      },
     ],
-    'max-len': ['error', {
-      ignoreComments: true,
-      code: 125
-    }],
+    'max-len': [
+      'error',
+      {
+        ignoreComments: true,
+        code: 125,
+      },
+    ],
     '@typescript-eslint/consistent-type-assertions': 'off',
     'react/display-name': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
@@ -81,28 +83,32 @@ module.exports = {
       'error',
       {
         alias: '@',
-        ignoreImportPatterns: ['**/StoreProvider', '**/testing']
-      }
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
     ],
     'ernie-plugin/public-api-imports': [
       'error',
       {
         alias: '@',
-        testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
-      }
-
+        testFilesPatterns: [
+          '**/*.test.*',
+          '**/*.story.*',
+          '**/StoreDecorator.tsx',
+        ],
+      },
     ],
     '@typescript-eslint/consistent-type-imports': 'off',
     '@typescript-eslint/method-signature-style': 'off',
-    '@typescript-eslint/no-namespace': 'off'
+    '@typescript-eslint/no-namespace': 'off',
+    'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
   },
   overrides: [
     {
       files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
       rules: {
         'i18next/no-literal-string': 'off',
-        'max-len': 'off'
-      }
-    }
-  ]
-}
+        'max-len': 'off',
+      },
+    },
+  ],
+};

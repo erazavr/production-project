@@ -1,13 +1,13 @@
-export { articleDetailsReducer } from './model/slice/articleDetailsSlice'
-export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector'
-export { ArticleBlockType } from './model/const/articleConsts'
-export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs'
-export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector'
-export { ArticleList } from './ui/ArticleList/ArticleList'
-export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
-export { type Article } from './model/types/article'
-export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema'
-export { getArticleDetailsData } from './model/selectors/articleDetails'
-export { ArticleType } from './model/const/articleConsts'
-export { ArticleSortField } from './model/const/articleConsts'
-export { ArticleView } from './model/const/articleConsts'
+export { articleDetailsReducer } from './model/slice/articleDetailsSlice';
+export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
+export { ArticleBlockType } from './model/const/articleConsts';
+export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
+export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
+export { ArticleList } from './ui/ArticleList/ArticleList';
+export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
+export { type Article } from './model/types/article';
+export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
+export { getArticleDetailsData } from './model/selectors/articleDetails';
+export { ArticleType } from './model/const/articleConsts';
+export { ArticleSortField } from './model/const/articleConsts';
+export { ArticleView } from './model/const/articleConsts';

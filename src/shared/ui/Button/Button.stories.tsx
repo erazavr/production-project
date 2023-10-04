@@ -1,98 +1,96 @@
-import { Theme } from '@/shared/const/theme'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-import React from 'react'
-import {
-  ThemeDecorator
-} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { Theme } from '@/shared/const/theme';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
+import React from 'react';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
-import { Button, ButtonSize, ButtonVariant } from './Button'
+import { Button, ButtonSize, ButtonVariant } from './Button';
 
 export default {
   title: 'shared/Button',
   component: Button,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
-} as ComponentMeta<typeof Button>
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
+const Template: ComponentStory<typeof Button> = args => <Button {...args} />;
 
-export const Primary = Template.bind({})
+export const Primary = Template.bind({});
 Primary.args = {
-  children: 'Button'
-}
+  children: 'Button',
+};
 
-export const Clear = Template.bind({})
+export const Clear = Template.bind({});
 Clear.args = {
   children: 'Button',
-  variant: ButtonVariant.CLEAR
-}
+  variant: ButtonVariant.CLEAR,
+};
 
-export const Outline = Template.bind({})
+export const Outline = Template.bind({});
 Outline.args = {
   children: 'Button',
-  variant: ButtonVariant.OUTLINE
-}
+  variant: ButtonVariant.OUTLINE,
+};
 
-export const OutlineSizeL = Template.bind({})
+export const OutlineSizeL = Template.bind({});
 OutlineSizeL.args = {
   children: 'Button',
   variant: ButtonVariant.OUTLINE,
-  size: ButtonSize.L
-}
+  size: ButtonSize.L,
+};
 
-export const OutlineSizeXL = Template.bind({})
+export const OutlineSizeXL = Template.bind({});
 OutlineSizeXL.args = {
   children: 'Button',
   variant: ButtonVariant.OUTLINE,
-  size: ButtonSize.XL
-}
+  size: ButtonSize.XL,
+};
 
-export const OutlineDark = Template.bind({})
+export const OutlineDark = Template.bind({});
 OutlineDark.args = {
   children: 'Button',
-  variant: ButtonVariant.OUTLINE
-}
-OutlineDark.decorators = [ThemeDecorator(Theme.DARK)]
+  variant: ButtonVariant.OUTLINE,
+};
+OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const BackgroundTheme = Template.bind({})
+export const BackgroundTheme = Template.bind({});
 BackgroundTheme.args = {
   children: 'Button',
-  variant: ButtonVariant.BACKGROUND
-}
+  variant: ButtonVariant.BACKGROUND,
+};
 
-export const BackgroundInverted = Template.bind({})
+export const BackgroundInverted = Template.bind({});
 BackgroundInverted.args = {
   children: 'Button',
-  variant: ButtonVariant.BACKGROUND_INVERTED
-}
+  variant: ButtonVariant.BACKGROUND_INVERTED,
+};
 
-export const Square = Template.bind({})
+export const Square = Template.bind({});
 Square.args = {
   children: '>',
   variant: ButtonVariant.BACKGROUND_INVERTED,
-  square: true
-}
+  square: true,
+};
 
-export const SquareSizeL = Template.bind({})
+export const SquareSizeL = Template.bind({});
 SquareSizeL.args = {
   children: '>',
   variant: ButtonVariant.BACKGROUND_INVERTED,
   square: true,
-  size: ButtonSize.L
-}
+  size: ButtonSize.L,
+};
 
-export const SquareSizeXL = Template.bind({})
+export const SquareSizeXL = Template.bind({});
 SquareSizeXL.args = {
   children: '>',
   variant: ButtonVariant.BACKGROUND_INVERTED,
   square: true,
-  size: ButtonSize.XL
-}
+  size: ButtonSize.XL,
+};
 
-export const Disabled = Template.bind({})
+export const Disabled = Template.bind({});
 Disabled.args = {
   children: 'Disabled',
   variant: ButtonVariant.OUTLINE,
-  disabled: true
-}
+  disabled: true,
+};

@@ -1,24 +1,26 @@
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-import React from 'react'
-import withMock from 'storybook-addon-mock'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
+import React from 'react';
+import withMock from 'storybook-addon-mock';
 
-import { NotificationList } from './NotificationList'
+import { NotificationList } from './NotificationList';
 
 export default {
   title: 'entities/NotificationList',
   component: NotificationList,
   argTypes: {
-    backgroundColor: { control: 'color' }
+    backgroundColor: { control: 'color' },
   },
-  decorators: [withMock]
-} as ComponentMeta<typeof NotificationList>
+  decorators: [withMock],
+} as ComponentMeta<typeof NotificationList>;
 
-const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args} />
+const Template: ComponentStory<typeof NotificationList> = args => (
+  <NotificationList {...args} />
+);
 
-export const Normal = Template.bind({})
-Normal.args = {}
-Normal.decorators = [StoreDecorator({})]
+export const Normal = Template.bind({});
+Normal.args = {};
+Normal.decorators = [StoreDecorator({})];
 
 Normal.parameters = {
   mockData: [
@@ -30,9 +32,9 @@ Normal.parameters = {
         {
           id: '1',
           title: 'Уведомление',
-          description: 'Поставь чай'
-        }
-      ]
-    }
-  ]
-}
+          description: 'Поставь чай',
+        },
+      ],
+    },
+  ],
+};

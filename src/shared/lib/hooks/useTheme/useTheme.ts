@@ -1,40 +1,37 @@
-import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localStorage'
-import { Theme } from '@/shared/const/theme'
-import { useCallback, useContext } from 'react'
-import { ThemeContext } from '../../context/ThemeContext'
+import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localStorage';
+import { Theme } from '@/shared/const/theme';
+import { useCallback, useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
 
 interface UseThemeResult {
-  toggleTheme: () => void
-  theme: Theme
+  toggleTheme: () => void;
+  theme: Theme;
 }
 
-export function useTheme (): UseThemeResult {
-  const {
-    theme,
-    setTheme
-  } = useContext(ThemeContext)
+export function useTheme(): UseThemeResult {
+  const { theme, setTheme } = useContext(ThemeContext);
 
   const toggleTheme = useCallback(() => {
-    let newTheme: Theme
+    let newTheme: Theme;
     switch (theme) {
-    case Theme.DARK:
-      newTheme = Theme.LIGHT
-      break
-    case Theme.LIGHT:
-      newTheme = Theme.ORANGE
-      break
-    case Theme.ORANGE:
-      newTheme = Theme.DARK
-      break
-    default:
-      newTheme = Theme.LIGHT
+      case Theme.DARK:
+        newTheme = Theme.LIGHT;
+        break;
+      case Theme.LIGHT:
+        newTheme = Theme.ORANGE;
+        break;
+      case Theme.ORANGE:
+        newTheme = Theme.DARK;
+        break;
+      default:
+        newTheme = Theme.LIGHT;
     }
-    setTheme?.(newTheme)
-    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
-  }, [theme, setTheme])
+    setTheme?.(newTheme);
+    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
+  }, [theme, setTheme]);
 
   return {
     theme: theme || Theme.LIGHT,
-    toggleTheme
-  }
+    toggleTheme,
+  };
 }

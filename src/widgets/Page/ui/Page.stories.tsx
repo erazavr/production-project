@@ -1,19 +1,19 @@
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-import React from 'react'
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
+import React from 'react';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
-import { Page } from './Page'
+import { Page } from './Page';
 
 export default {
   title: 'widgets/Page',
   component: Page,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
-} as ComponentMeta<typeof Page>
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof Page>;
 
-const Template: ComponentStory<typeof Page> = (args) => <Page {...args} />
+const Template: ComponentStory<typeof Page> = args => <Page {...args} />;
 
-export const Normal = Template.bind({})
-Normal.args = {}
-Normal.decorators = [StoreDecorator({})]
+export const Normal = Template.bind({});
+Normal.args = {};
+Normal.decorators = [StoreDecorator({})];

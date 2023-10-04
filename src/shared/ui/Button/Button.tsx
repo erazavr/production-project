@@ -1,14 +1,14 @@
-import { type ButtonHTMLAttributes, memo, type ReactNode } from 'react'
-import { classNames, type Mods } from '@/shared/lib/classNames/classNames'
+import { type ButtonHTMLAttributes, memo, type ReactNode } from 'react';
+import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
 
-import cls from './Button.module.scss'
+import cls from './Button.module.scss';
 
 export enum ButtonVariant {
   CLEAR = 'clear',
   OUTLINE = 'outline',
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'backgroundInverted',
-  OUTLINE_RED = 'outlineRed'
+  OUTLINE_RED = 'outlineRed',
 }
 
 export enum ButtonSize {
@@ -18,15 +18,15 @@ export enum ButtonSize {
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  className?: string
-  variant?: ButtonVariant
-  square?: boolean
-  size?: ButtonSize
-  children?: ReactNode
-  fullWidth?: boolean
+  className?: string;
+  variant?: ButtonVariant;
+  square?: boolean;
+  size?: ButtonSize;
+  children?: ReactNode;
+  fullWidth?: boolean;
 }
 
-export const Button = memo(function Button (props: ButtonProps) {
+export const Button = memo(function Button(props: ButtonProps) {
   const {
     children,
     className,
@@ -36,13 +36,13 @@ export const Button = memo(function Button (props: ButtonProps) {
     disabled,
     fullWidth,
     ...rest
-  } = props
+  } = props;
 
   const mods: Mods = {
     [cls.square]: square,
     [cls.disabled]: disabled,
-    [cls.fullWidth]: fullWidth
-  }
+    [cls.fullWidth]: fullWidth,
+  };
 
   return (
     <button
@@ -51,10 +51,10 @@ export const Button = memo(function Button (props: ButtonProps) {
       className={classNames(cls.Button, mods, [
         className,
         cls[variant],
-        cls[size]
+        cls[size],
       ])}
     >
       {children}
     </button>
-  )
-})
+  );
+});

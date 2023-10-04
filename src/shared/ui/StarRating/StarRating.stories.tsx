@@ -1,17 +1,19 @@
-import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-import React from 'react'
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
+import React from 'react';
 
-import { StarRating } from './StarRating'
+import { StarRating } from './StarRating';
 
 export default {
   title: 'shared/StarRating',
   component: StarRating,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
-} as ComponentMeta<typeof StarRating>
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof StarRating>;
 
-const Template: ComponentStory<typeof StarRating> = (args) => <StarRating {...args} />
+const Template: ComponentStory<typeof StarRating> = args => (
+  <StarRating {...args} />
+);
 
-export const Normal = Template.bind({})
-Normal.args = {}
+export const Normal = Template.bind({});
+Normal.args = {};

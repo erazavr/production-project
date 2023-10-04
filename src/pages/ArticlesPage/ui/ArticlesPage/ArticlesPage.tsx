@@ -1,43 +1,41 @@
-import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList'
-import { memo, useCallback } from 'react'
-import { useSearchParams } from 'react-router-dom'
-import { classNames } from '@/shared/lib/classNames/classNames'
+import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+import { memo, useCallback } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
-  type ReducersList
-} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect'
-import { Page } from '@/widgets/Page'
-import {
-  fetchNextArticlesPage
-} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
-import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
-import { articlePageReducer } from '../../model/slices/articlePageSlice'
-import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
+  type ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
+import { Page } from '@/widgets/Page';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
+import { articlePageReducer } from '../../model/slices/articlePageSlice';
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 
-import cls from './ArticlesPage.module.scss'
+import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
-  className?: string
+  className?: string;
 }
 
 const reducers: ReducersList = {
-  articlesPage: articlePageReducer
-}
+  articlesPage: articlePageReducer,
+};
 
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
-  const [searchParams] = useSearchParams()
+  const [searchParams] = useSearchParams();
 
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
 
   useInitialEffect(() => {
-    dispatch(initArticlesPage(searchParams))
-  })
+    dispatch(initArticlesPage(searchParams));
+  });
 
   const onLoadNextPart = useCallback(() => {
-    dispatch(fetchNextArticlesPage())
-  }, [dispatch])
+    dispatch(fetchNextArticlesPage());
+  }, [dispatch]);
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
@@ -46,11 +44,11 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
         onScrollEnd={onLoadNextPart}
         className={classNames(cls.ArticlesPage, {}, [className])}
       >
-        <ArticlesPageFilters/>
-        <ArticleInfiniteList className={cls.list}/>
+        <ArticlesPageFilters />
+        <ArticleInfiniteList className={cls.list} />
       </Page>
     </DynamicModuleLoader>
-  )
-}
+  );
+};
 
-export default memo(ArticlesPage)
+export default memo(ArticlesPage);

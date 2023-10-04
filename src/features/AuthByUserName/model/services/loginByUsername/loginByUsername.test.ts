@@ -1,6 +1,6 @@
-import { userActions } from '@/entities/User'
-import { loginByUsername } from './loginByUsername'
-import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
+import { userActions } from '@/entities/User';
+import { loginByUsername } from './loginByUsername';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 describe('loginByUsername.test', () => {
   // let dispatch: Dispatch
@@ -37,35 +37,37 @@ describe('loginByUsername.test', () => {
   test('success login', async () => {
     const userValue = {
       username: 'admin',
-      id: '1'
-    }
+      id: '1',
+    };
 
-    const thunk = new TestAsyncThunk(loginByUsername)
+    const thunk = new TestAsyncThunk(loginByUsername);
 
-    thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }))
+    thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }));
     const result = await thunk.callThunk({
       username: 'admin',
-      password: '123 '
-    })
+      password: '123 ',
+    });
 
-    expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setUserData(userValue))
-    expect(thunk.dispatch).toHaveBeenCalledTimes(3)
-    expect(thunk.api.post).toBeCalled()
-    expect(result.meta.requestStatus).toEqual('fulfilled')
-    expect(result.payload).toEqual(userValue)
-  })
+    expect(thunk.dispatch).toHaveBeenCalledWith(
+      userActions.setUserData(userValue),
+    );
+    expect(thunk.dispatch).toHaveBeenCalledTimes(3);
+    expect(thunk.api.post).toBeCalled();
+    expect(result.meta.requestStatus).toEqual('fulfilled');
+    expect(result.payload).toEqual(userValue);
+  });
   test('error login', async () => {
-    const thunk = new TestAsyncThunk(loginByUsername)
-    thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }))
+    const thunk = new TestAsyncThunk(loginByUsername);
+    thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
 
     const result = await thunk.callThunk({
       username: 'admin',
-      password: '123 '
-    })
+      password: '123 ',
+    });
 
-    expect(thunk.api.post).toBeCalled()
-    expect(thunk.dispatch).toHaveBeenCalledTimes(2)
-    expect(result.meta.requestStatus).toEqual('rejected')
-    expect(result.payload).toEqual('error')
-  })
-})
+    expect(thunk.api.post).toBeCalled();
+    expect(thunk.dispatch).toHaveBeenCalledTimes(2);
+    expect(result.meta.requestStatus).toEqual('rejected');
+    expect(result.payload).toEqual('error');
+  });
+});

@@ -1,31 +1,31 @@
-import { Listbox as HListBox } from '@headlessui/react'
-import { type ReactNode } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { type DropDownDirection } from '@/shared/types/ui'
-import { Button } from '../../../Button/Button'
-import { HStack } from '../../../Stack'
-import { mapDirectionClasses } from '../../styles/consts'
-import cls from './ListBox.module.scss'
-import popupCls from '../../styles/popup.module.scss'
+import { Listbox as HListBox } from '@headlessui/react';
+import { type ReactNode } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { type DropDownDirection } from '@/shared/types/ui';
+import { Button } from '../../../Button/Button';
+import { HStack } from '../../../Stack';
+import { mapDirectionClasses } from '../../styles/consts';
+import cls from './ListBox.module.scss';
+import popupCls from '../../styles/popup.module.scss';
 
 export interface ListBoxItem {
-  value: string
-  content: ReactNode
-  disabled?: boolean
+  value: string;
+  content: ReactNode;
+  disabled?: boolean;
 }
 
 interface ListBoxProps {
-  items?: ListBoxItem[]
-  className?: string
-  value?: string
-  defaultValue?: string
-  onChange?: (value: string) => void
-  readonly?: boolean
-  direction?: DropDownDirection
-  label?: string
+  items?: ListBoxItem[];
+  className?: string;
+  value?: string;
+  defaultValue?: string;
+  onChange?: (value: string) => void;
+  readonly?: boolean;
+  direction?: DropDownDirection;
+  label?: string;
 }
 
-export function ListBox (props: ListBoxProps) {
+export function ListBox(props: ListBoxProps) {
   const {
     className,
     items,
@@ -34,15 +34,18 @@ export function ListBox (props: ListBoxProps) {
     onChange,
     readonly,
     label,
-    direction = 'bottom right'
-  } = props
+    direction = 'bottom right',
+  } = props;
 
-  const optionsClasses = [mapDirectionClasses[direction]]
+  const optionsClasses = [mapDirectionClasses[direction]];
 
   return (
     <HStack gap={'16'}>
-      {label &&
-        <span className={classNames('', { [cls.readonly]: readonly })}>{label + ' >'}</span>}
+      {label && (
+        <span className={classNames('', { [cls.readonly]: readonly })}>
+          {label + ' >'}
+        </span>
+      )}
       <HListBox
         disabled={readonly}
         as={'div'}
@@ -51,29 +54,23 @@ export function ListBox (props: ListBoxProps) {
         onChange={onChange}
       >
         <HListBox.Button className={cls.trigger}>
-          <Button disabled={readonly}>
-            {value ?? defaultValue}
-          </Button>
+          <Button disabled={readonly}>{value ?? defaultValue}</Button>
         </HListBox.Button>
-        <HListBox.Options className={classNames(cls.options, {}, optionsClasses)}>
-          {items?.map((item) => (
+        <HListBox.Options
+          className={classNames(cls.options, {}, optionsClasses)}
+        >
+          {items?.map(item => (
             <HListBox.Option
               key={item.value}
               value={item.value}
               disabled={item.disabled}
             >
-              {({
-                active,
-                selected
-              }) => (
-                <li className={
-                  classNames(
-                    cls.item,
-                    {
-                      [popupCls.active]: active,
-                      [popupCls.disabled]: item.disabled
-                    })
-                }
+              {({ active, selected }) => (
+                <li
+                  className={classNames(cls.item, {
+                    [popupCls.active]: active,
+                    [popupCls.disabled]: item.disabled,
+                  })}
                 >
                   {item.content}
                 </li>
@@ -83,5 +80,5 @@ export function ListBox (props: ListBoxProps) {
         </HListBox.Options>
       </HListBox>
     </HStack>
-  )
+  );
 }

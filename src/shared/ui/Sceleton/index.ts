@@ -1,1 +1,1 @@
-export * from './Sceleton'
+export * from './Sceleton';
